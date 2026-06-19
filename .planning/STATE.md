@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-06-19)
 
 **Core value:** F#을 아는 개발자가 이 튜토리얼만 따라가면 Fable로 실제 동작하는 웹 앱을 만들 수 있다.
-**Current focus:** Phase 2 — Core Toolchain Chapters
+**Current focus:** Phase 3 — JS Interop Axis
 
 ## Current Position
 
 Phase: 3 of 5 (JS Interop Axis)
-Plan: 1 of N in current phase
+Plan: 2 of N in current phase
 Status: In progress
-Last activity: 2026-06-19 — Completed 03-01-PLAN.md (Ch.4 기본 Interop — [<Emit>]/[<Import>]/[<Global>]/dynamic ?, helpers.js, actual emitted JS documented)
+Last activity: 2026-06-19 — Completed 03-02-PLAN.md (Ch.5 고급 Interop — erased unions: U2<int,float> typeof collision verified in actual App.fs.js, StringEnum bare-string confirmed)
 
-Progress: [███████░░░] 35% (7/20 total plans)
+Progress: [████████░░] 40% (8/20 total plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
-- Average duration: ~2min 18sec
-- Total execution time: ~11min 30sec
+- Total plans completed: 8
+- Average duration: ~3min
+- Total execution time: ~21min 30sec
 
 **By Phase:**
 
@@ -29,10 +29,10 @@ Progress: [███████░░░] 35% (7/20 total plans)
 |-------|-------|-------|----------|
 | Phase 1 | 3/5 | 6m 20s | 2m 7s |
 | Phase 2 | 3/3 | ~11m 10s | ~3m 43s |
-| Phase 3 | 1/? | ~7m | ~7m |
+| Phase 3 | 2/? | ~17m | ~8.5m |
 
 **Recent Trend:**
-- Last 5 plans: 02-01 (1m 56s), 02-02 (~6m), 02-03 (3m 14s), 03-01 (~7m)
+- Last 5 plans: 02-02 (~6m), 02-03 (3m 14s), 03-01 (~7m), 03-02 (~10m)
 - Trend: consistent
 
 *Updated after each plan completion*
@@ -76,6 +76,10 @@ Recent decisions affecting current work:
 - [03-01]: importDefault renames binding in emitted JS to avoid collision (helpers -> helpers_1) — document for readers
 - [03-01]: [<Emit>] produces no function definition in output; call site becomes inline expression with Fable integer coercion | 0
 - [03-01]: helpers.js is a hand-written local JS module (not generated) — committed to git; serves as local mock for Import/importDefault without needing npm packages
+- [03-02]: U2<int,float> typeof collision CONFIRMED in Fable 5.3.0: handleUnsafe → Case2(float) gets `if (typeof x === "number")`, Case1(int) gets `else` — int branch is dead code since int is also number
+- [03-02]: Fable erased-union typeof output order: Case2 → if-branch (typeof check), Case1 → else. For U2<A,B> with A=int,B=float: float wins the if, int in else is unreachable
+- [03-02]: handleSafe(U2<string,int>) → Case2(int) gets `if (typeof x === "number")`, Case1(string) gets `else` — both reachable (distinct JS types)
+- [03-02]: StringEnum(CaseRules.KebabCase): ContentBox → `export const sizing = "content-box"` — bare string literal, no runtime object
 
 ### Research Flags (Phase planning 시 참고)
 
@@ -94,5 +98,5 @@ Recent decisions affecting current work:
 ## Session Continuity
 
 Last session: 2026-06-19
-Stopped at: Completed 03-01-PLAN.md — Ch.4 기본 Interop with four-mechanism example ([<Emit>]/[<Import>]/[<Global>]/dynamic ?), helpers.js, actual emitted JS documented; Phase 3 in progress (1/N plans)
+Stopped at: Completed 03-02-PLAN.md — Ch.5 고급 Interop (erased unions): U2<int,float> typeof collision verified in actual App.fs.js; StringEnum bare-string confirmed; full Korean chapter with verified typeof quotes; Phase 3 in progress (2/N plans)
 Resume file: None
