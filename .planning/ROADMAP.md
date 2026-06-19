@@ -50,12 +50,12 @@ Plans:
   2. 독자가 Ch.2 예제를 실행하여 F# 레코드·DU·숫자 타입이 JS로 컴파일된 출력을 직접 확인하고, Option 타입이 `null`로 지워진다는 것을 이해한다.
   3. 독자가 Ch.3 예제를 통해 Fable.Core에서 사용 가능한 API와 .NET 표준 라이브러리 지원 범위·한계를 파악한다.
   4. Ch.1-3 각각의 독립 예제 프로젝트가 `npm run build`로 에러 없이 빌드된다 (`{{#include}}` 앵커 배선 end-to-end 검증 포함).
-**Plans**: TBD
+**Plans**: 3 plans (2 waves: 02-01 then 02-02 + 02-03 in parallel)
 
 Plans:
-- [ ] 02-01: Ch.1 — 프로젝트 셋업 챕터 작성 (dotnet + Node + Vite; fable watch --verbose)
-- [ ] 02-02: Ch.2 — 컴파일 모델 챕터 작성 (F# 타입 → JS 변환, 생성 JS 확인)
-- [ ] 02-03: Ch.3 — Fable.Core 기초 챕터 작성 (API, 타입 매핑, 표준 라이브러리 범위)
+- [ ] 02-01-PLAN.md — Ch.1 프로젝트 셋업: ch01-setup를 DOM 출력 Hello World로 진화 + 빌드 검증 (wave 1)
+- [ ] 02-02-PLAN.md — Ch.2 컴파일 모델: F# 타입 → JS 변환, 생성 JS 검사 (Option erasure 실측) (wave 2)
+- [ ] 02-03-PLAN.md — Ch.3 Fable.Core 기초: 인터롭 프리미티브·BCL 범위·Phase 3 경계 (wave 2)
 
 ---
 
