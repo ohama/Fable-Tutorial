@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-06-19)
 ## Current Position
 
 Phase: 3 of 5 (JS Interop Axis)
-Plan: 3 of N in current phase
-Status: In progress
-Last activity: 2026-06-19 — Completed 03-03-PLAN.md (Ch.6 POJO 패턴 + 비동기 경계: 4 POJO 패턴 plain object literal 검증, Fable.Promise 3.2.0 promise{} CE 호환 확인, Async.StartImmediate 컴파일 확인)
+Plan: 4 of 4 in current phase
+Status: Phase 3 complete
+Last activity: 2026-06-19 — Completed 03-04-PLAN.md (Ch.7 npm 라이브러리 바인딩: canvas-confetti ImportDefault 바인딩, Glutinum CLI 실행으로 Open Q#2 해소, App.fs.js 기본 임포트 + 평이한 옵션 리터럴 확인)
 
-Progress: [████████░░] 45% (9/20 total plans)
+Progress: [█████████░] 50% (10/20 total plans)
 
 ## Performance Metrics
 
@@ -29,7 +29,7 @@ Progress: [████████░░] 45% (9/20 total plans)
 |-------|-------|-------|----------|
 | Phase 1 | 3/5 | 6m 20s | 2m 7s |
 | Phase 2 | 3/3 | ~11m 10s | ~3m 43s |
-| Phase 3 | 3/? | ~23m | ~7.7m |
+| Phase 3 | 4/4 | ~27m | ~6.8m |
 
 **Recent Trend:**
 - Last 5 plans: 02-02 (~6m), 02-03 (3m 14s), 03-01 (~7m), 03-02 (~10m)
@@ -86,10 +86,15 @@ Recent decisions affecting current work:
 - [03-03]: Browser.Types.Response not exposed in Fable.Browser.Dom 2.20.0 — define minimal IResponse interface locally (abstract text: unit -> JS.Promise<string>) for fetch usage without Fable.Fetch package
 - [03-03]: [<JS.Pojo>] REQUIRES [<AllowNullLiteral>] — both attributes mandatory; omitting either causes compile error. Legacy [<Pojo>] / [<ParamObject>] not used in Fable 5
 - [03-03]: 4 POJO patterns all produce plain { ... } object literals in App.fs.js (none extends Record): anonymous record, [<JS.Pojo>] class (opts = { term: "hello" } — caseSensitive omitted), createObj, jsOptions<IFace>
+- [03-04]: CommonJS `export = fn` npm 패키지는 `[<ImportDefault("package-name")>]`로 바인딩 — Vite/ESM이 기본 익스포트로 처리; `[<ImportAll>]`이나 명명된 `[<Import>]`는 오류 (Pitfall 7 확정)
+- [03-04]: Glutinum CLI 0.13.0이 canvas-confetti `export = confetti`에 대해 `[<Import("confetti","REPLACE_ME")>]` (명명된 임포트, 플레이스홀더 모듈명) 생성 — `[<ImportDefault>]` 아님; 수기 바인딩 필요; NamespaceExportDeclaration 미지원
+- [03-04]: ts2fable 0.7.1이 동일 .d.ts에 대해 `Import("*","canvas-confetti")` (importAll) 생성 — 역시 CommonJS `export=` 직접 호출 패턴에 부적합
+- [03-04]: 두 파일 fsproj 패턴 — CanvasConfetti.fs(바인딩) BEFORE App.fs(소비자) in Compile order; F# 파일 선언 순서가 참조 해석에 영향
+- [03-04]: canvas-confetti는 npm `dependencies`(Vite 번들 시 필요), @types/canvas-confetti는 `devDependencies`(타입 검사용, 번들 불필요)
 
 ### Research Flags (Phase planning 시 참고)
 
-- Phase 3 Ch.7 (라이브러리 바인딩): 바인딩할 구체적 npm 패키지 결정 필요 (date-fns / chart.js 후보)
+- Phase 3 Ch.7 (라이브러리 바인딩): canvas-confetti로 결정 및 완료 — RESOLVED in 03-04
 - Phase 5 Ch.12 (테스트): Fable.Mocha + Fable 5 호환성 미확인 — Phase 2 또는 3 중 POC 빌드 검증 필요
 - [01-01]: mdbook-admonish와 mdbook-mermaid가 mdbook 0.5.x를 지원하는 버전을 출시하는지 모니터링 필요
 
@@ -103,6 +108,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-06-19
-Stopped at: Completed 03-03-PLAN.md — Ch.6 POJO 패턴 + 비동기 경계: 4 POJO 패턴 평이한 객체 리터럴 검증; Fable.Promise 3.2.0 promise{} CE Fable 5.3.0 호환 확인; Async.StartImmediate startImmediate() 컴파일 확인; IResponse 인터페이스 패턴 확립; Phase 3 in progress (3/N plans)
+Last session: 2026-06-19T07:50:29Z
+Stopped at: Completed 03-04-PLAN.md — Ch.7 npm 라이브러리 바인딩 (Phase 3 capstone): canvas-confetti [<ImportDefault>] + [<JS.Pojo>] 수기 바인딩 확인; Glutinum CLI 실행으로 Open Q#2 해소(명명된 임포트/플레이스홀더 생성, ImportDefault 아님); ts2fable importAll 생성 확인; npm run build exit 0; App.fs.js 기본 임포트 + 평이한 옵션 리터럴 검증; Phase 3 COMPLETE (4/4 plans)
 Resume file: None
