@@ -47,7 +47,7 @@ Plans:
 **Requirements**: SETUP-01, SETUP-02, SETUP-03
 **Success Criteria** (what must be TRUE):
   1. 독자가 Ch.1 지시를 따라 `.NET SDK + dotnet tool restore + Fable + Vite` 환경을 셋업하고 브라우저에서 Hello World 출력을 확인할 수 있다.
-  2. 독자가 Ch.2 예제를 실행하여 F# 레코드·DU·숫자 타입이 JS로 컴파일된 출력을 직접 확인하고, Option 타입이 `null`로 지워진다는 것을 이해한다.
+  2. 독자가 Ch.2 예제를 실행하여 F# 레코드·DU·숫자 타입이 JS로 컴파일된 출력을 직접 확인하고, Option 타입의 None이 falsy 값(`null`/`undefined` — 실제 생성된 JS로 확인)으로 지워진다는 것을 이해한다.
   3. 독자가 Ch.3 예제를 통해 Fable.Core에서 사용 가능한 API와 .NET 표준 라이브러리 지원 범위·한계를 파악한다.
   4. Ch.1-3 각각의 독립 예제 프로젝트가 `npm run build`로 에러 없이 빌드된다 (`{{#include}}` 앵커 배선 end-to-end 검증 포함).
 **Plans**: 3 plans (2 waves: 02-01 then 02-02 + 02-03 in parallel)
