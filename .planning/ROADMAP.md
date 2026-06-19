@@ -13,7 +13,7 @@ F#을 아는 개발자가 Fable로 실제 동작하는 웹 앱을 만들 수 있
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Infrastructure Foundation** - mdBook 골격 + F# 구문 강조 + CI/CD 파이프라인 확립 ✓
-- [ ] **Phase 2: Core Toolchain Chapters (Ch.1-3)** - 프로젝트 셋업·컴파일 모델·Fable.Core 기초 챕터 작성
+- [x] **Phase 2: Core Toolchain Chapters (Ch.1-3)** - 프로젝트 셋업·컴파일 모델·Fable.Core 기초 챕터 작성 ✓
 - [ ] **Phase 3: JS Interop Axis (Ch.4-7)** - Emit/Import/Global·erased union·POJO·라이브러리 바인딩 챕터 작성
 - [ ] **Phase 4: Elmish and UI Axis (Ch.8-10)** - Elmish MVU·Feliz 컴포넌트·SPA 라우팅 챕터 작성
 - [ ] **Phase 5: Ecosystem and Real-World Axis (Ch.11-13)** - Thoth.Json+HTTP·테스트·빌드 최적화 챕터 작성
@@ -53,9 +53,9 @@ Plans:
 **Plans**: 3 plans (2 waves: 02-01 then 02-02 + 02-03 in parallel)
 
 Plans:
-- [ ] 02-01-PLAN.md — Ch.1 프로젝트 셋업: ch01-setup를 DOM 출력 Hello World로 진화 + 빌드 검증 (wave 1)
-- [ ] 02-02-PLAN.md — Ch.2 컴파일 모델: F# 타입 → JS 변환, 생성 JS 검사 (Option erasure 실측) (wave 2)
-- [ ] 02-03-PLAN.md — Ch.3 Fable.Core 기초: 인터롭 프리미티브·BCL 범위·Phase 3 경계 (wave 2)
+- [x] 02-01-PLAN.md — Ch.1 프로젝트 셋업: ch01-setup를 DOM 출력 Hello World로 진화 + 빌드 검증 (wave 1)
+- [x] 02-02-PLAN.md — Ch.2 컴파일 모델: F# 타입 → JS 변환, 생성 JS 검사 (Option None → undefined 실측) (wave 2)
+- [x] 02-03-PLAN.md — Ch.3 Fable.Core 기초: 인터롭 프리미티브·BCL 범위·Phase 3 경계 (wave 2)
 
 ---
 
@@ -123,7 +123,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Infrastructure Foundation | 5/5 | ✓ Complete | 2026-06-19 |
-| 2. Core Toolchain Chapters (Ch.1-3) | 0/3 | Not started | - |
+| 2. Core Toolchain Chapters (Ch.1-3) | 3/3 | ✓ Complete | 2026-06-19 |
 | 3. JS Interop Axis (Ch.4-7) | 0/4 | Not started | - |
 | 4. Elmish and UI Axis (Ch.8-10) | 0/3 | Not started | - |
 | 5. Ecosystem and Real-World Axis (Ch.11-13) | 0/3 | Not started | - |

@@ -16,9 +16,9 @@
 
 ### Setup & Compile Model (기초축, Ch.1-3)
 
-- [ ] **SETUP-01**: 독자가 .NET SDK + dotnet tool restore + Fable + Vite로 프로젝트를 셋업하고 첫 Hello World를 실행할 수 있다
-- [ ] **SETUP-02**: 독자가 F# 레코드·DU·숫자 타입이 JS로 어떻게 컴파일되는지 이해하고 생성된 JS 출력을 확인할 수 있다
-- [ ] **SETUP-03**: 독자가 Fable.Core의 기본 API, 타입 매핑, 표준 라이브러리 지원 범위를 이해한다
+- [x] **SETUP-01**: 독자가 .NET SDK + dotnet tool restore + Fable + Vite로 프로젝트를 셋업하고 첫 Hello World를 실행할 수 있다
+- [x] **SETUP-02**: 독자가 F# 레코드·DU·숫자 타입이 JS로 어떻게 컴파일되는지 이해하고 생성된 JS 출력을 확인할 수 있다
+- [x] **SETUP-03**: 독자가 Fable.Core의 기본 API, 타입 매핑, 표준 라이브러리 지원 범위를 이해한다
 
 ### JS Interop (interop축, Ch.4-7)
 
@@ -78,9 +78,9 @@
 | CONT-01 | Phase 1 | Complete |
 | CONT-02 | Phase 1 | Complete |
 | CONT-03 | Phase 1 | Complete |
-| SETUP-01 | Phase 2 | Pending |
-| SETUP-02 | Phase 2 | Pending |
-| SETUP-03 | Phase 2 | Pending |
+| SETUP-01 | Phase 2 | Complete |
+| SETUP-02 | Phase 2 | Complete |
+| SETUP-03 | Phase 2 | Complete |
 | INTR-01 | Phase 3 | Pending |
 | INTR-02 | Phase 3 | Pending |
 | INTR-03 | Phase 3 | Pending |
