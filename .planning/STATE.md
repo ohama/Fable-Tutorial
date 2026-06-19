@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-06-19)
 ## Current Position
 
 Phase: 2 of 5 (Core Toolchain Chapters)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-06-19 — Completed 02-01-PLAN.md (Ch.1 프로젝트 설정 — verified Fable build pipeline)
+Last activity: 2026-06-19 — Completed 02-02-PLAN.md (Ch.2 컴파일 모델 — record/DU/numeric/option/tuple, Option None = undefined verified)
 
-Progress: [████░░░░░░] 20% (4/20 total plans)
+Progress: [█████░░░░░] 25% (5/20 total plans)
 
 ## Performance Metrics
 
@@ -28,10 +28,10 @@ Progress: [████░░░░░░] 20% (4/20 total plans)
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | Phase 1 | 3/5 | 6m 20s | 2m 7s |
-| Phase 2 | 1/3 | 1m 56s | 1m 56s |
+| Phase 2 | 2/3 | 7m 56s | 3m 58s |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (4m 16s), 01-03 (1m 4s), 01-05 (1m 0s), 02-01 (1m 56s)
+- Last 5 plans: 01-03 (1m 4s), 01-05 (1m 0s), 02-01 (1m 56s), 02-02 (~6m)
 - Trend: consistent
 
 *Updated after each plan completion*
@@ -64,6 +64,11 @@ Recent decisions affecting current work:
 - [02-01]: Browser Fable apps have NO [<EntryPoint>] — module top-level statements execute directly
 - [02-01]: open Browser (from Fable.Browser.Dom 2.20.0) provides document global for DOM access
 - [02-01]: .gitignore updated: fable_modules/, **/*.fs.js, dist/ excluded from version control
+- [02-02]: Option None erasure = undefined in Fable 5 (verified from actual src/App.fs.js: `export const noneValue = undefined;` — NOT null; ROADMAP SC-2 "falsy(null/undefined)" is confirmed as undefined)
+- [02-02]: int64 compiles to BigInt literal (suffix n, e.g. 9999999999999n) — NOT plain number; cannot mix with number arithmetic
+- [02-02]: decimal compiles to fromParts(...) Decimal class — NOT plain number
+- [02-02]: DU tag numbering is 0-based, matching F# declaration order (first case = 0)
+- [02-02]: record compiles to ES6 class extending Record (NOT POJO) — JS library interop needs special handling (see Ch.4/6)
 
 ### Research Flags (Phase planning 시 참고)
 
@@ -82,5 +87,5 @@ Recent decisions affecting current work:
 ## Session Continuity
 
 Last session: 2026-06-19
-Stopped at: Completed 02-01-PLAN.md — Ch.1 프로젝트 설정 with verified Fable 5.3.0 build pipeline; 02-01-SUMMARY.md is the canonical runnable-example-pattern reference for 02-02 and 02-03
+Stopped at: Completed 02-02-PLAN.md — Ch.2 컴파일 모델 with verified build (npm run build exits 0), Option None = undefined confirmed from actual App.fs.js, and full Korean chapter with five {{#include}} anchors
 Resume file: None
