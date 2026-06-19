@@ -30,13 +30,14 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. 새 챕터 `.md` 파일에 `{{#include ../../examples/chNN-name/src/File.fs:anchor}}` 한 줄을 추가하면 예제 코드가 본문에 렌더링된다.
   4. 챕터 작성 표준 템플릿(개념 설명 → 예제 코드 흐름, 한국어 본문, 기술 용어 영어 병기 규칙)이 문서화되고 준수된다.
   5. 예제 프로젝트 디렉터리 구조(`examples/chNN-name/`, `.fsproj`, `package.json`, `vite.config.js`)가 확립되고, `dotnet tool restore && npm install && npm run dev` 한 시퀀스로 로컬에서 실행된다.
-**Plans**: TBD
+**Plans**: 5 plans
 
 Plans:
-- [ ] 01-01: mdBook 골격 구성 (book.toml, src/SUMMARY.md, 디렉터리 구조)
-- [ ] 01-02: 커스텀 highlight.js 빌드 및 theme/ 배치 (F# 구문 강조)
-- [ ] 01-03: 챕터 작성 템플릿 + {{#include}} 앵커 배선 확립
-- [ ] 01-04: GitHub Actions CI/CD 워크플로우 (빌드 + GitHub Pages 배포)
+- [ ] 01-01-PLAN.md — mdBook 골격 (book.toml src="src", SUMMARY.md, 13장 stub, .NET/Fable pin, admonish/mermaid)
+- [ ] 01-02-PLAN.md — 커스텀 highlight.js 빌드 → theme/ 배치 (F# 컬러 구문 강조 검증)
+- [ ] 01-03-PLAN.md — {{#include}} 앵커 배선 proof + ch01-setup 독립 예제 구조
+- [ ] 01-04-PLAN.md — GitHub Actions book.yml (binary download + deploy-pages) + Pages 배포 (checkpoints)
+- [ ] 01-05-PLAN.md — 챕터 작성 표준 템플릿 문서화 (introduction.md 챕터 구조 섹션)
 
 ---
 
