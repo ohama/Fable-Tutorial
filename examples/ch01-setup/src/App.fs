@@ -1,10 +1,8 @@
 module App
 
-open Fable.Core
+open Browser
 
 // ANCHOR: hello-world
-[<EntryPoint>]
-let main _ =
-    printfn "Hello from Fable"
-    0
+let app = document.getElementById "app"
+app.innerHTML <- "<h1>Hello from Fable!</h1>"
 // ANCHOR_END: hello-world
