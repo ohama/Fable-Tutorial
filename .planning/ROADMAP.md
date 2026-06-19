@@ -88,12 +88,12 @@ Plans:
   2. 독자가 Ch.9 예제에서 Feliz Html DSL로 React 컴포넌트를 작성하고 `React.useElmish` 훅으로 로컬 상태를 관리하는 앱을 실행한다.
   3. 독자가 Ch.10 예제를 실행하여 `Feliz.Router`로 다중 페이지 SPA 라우팅이 동작하는 것을 확인한다 (URL 변경 시 뷰 전환 포함).
   4. Ch.8-10 각각의 독립 예제 프로젝트가 `npm run build`로 에러 없이 빌드된다.
-**Plans**: TBD
+**Plans**: 3 plans (2 waves: 04-01 wave 1, then 04-02 + 04-03 in parallel wave 2)
 
 Plans:
-- [ ] 04-01: Ch.8 — Elmish 아키텍처 챕터 작성 (MVU, Program.mkProgram, Cmd.OfAsync)
-- [ ] 04-02: Ch.9 — Feliz 컴포넌트 챕터 작성 (Html DSL, prop, hooks, React.useElmish)
-- [ ] 04-03: Ch.10 — SPA 라우팅 챕터 작성 (Feliz.Router, hash vs push-state)
+- [ ] 04-01-PLAN.md — Ch.8 Elmish 아키텍처: MVU 카운터 + Cmd.OfAsync 비동기 루프, Program.withReactSynchronous 마운트 (wave 1)
+- [ ] 04-02-PLAN.md — Ch.9 Feliz 컴포넌트: Html DSL + [<ReactComponent>] + React.useElmish 로컬 상태, ReactDOM.createRoot 마운트 (wave 2)
+- [ ] 04-03-PLAN.md — Ch.10 SPA 라우팅: Feliz.Router 4.0.0 다중 페이지(hash 모드) + URL→뷰 전환, hash 라우팅 폴백 (wave 2)
 
 ---
 
