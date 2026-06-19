@@ -14,8 +14,24 @@ default-theme = "light"
 preferred-dark-theme = "navy"
 git-repository-url = "https://github.com/OWNER/REPO"
 edit-url-template = "https://github.com/OWNER/REPO/edit/main/src/{path}"
+additional-css = ["./mdbook-admonish.css"]
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
 
 [output.html.search]
 enable = true
 limit-results = 30
 boost-title = 2
+
+# NOTE: mdbook-admonish 1.20.0 and mdbook-mermaid 0.17.0 are installed locally
+# but depend on mdbook 0.4.x internals and crash when invoked by mdbook 0.5.3
+# (protocol incompatibility: null fields in 0.5.x JSON rejected by 0.4.x deserializer).
+# These blocks are commented out until mdbook-admonish and mdbook-mermaid release
+# versions targeting mdbook 0.5.x. CI workflow will use the same pinned versions.
+# Tracked in 01-01-SUMMARY.md — unblock in a future infrastructure plan.
+#
+# [preprocessor.admonish]
+# command = "mdbook-admonish"
+# assets_version = "3.1.0"
+#
+# [preprocessor.mermaid]
+# command = "mdbook-mermaid"
