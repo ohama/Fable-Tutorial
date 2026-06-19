@@ -71,32 +71,32 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01 | TBD | Pending |
-| INFRA-02 | TBD | Pending |
-| INFRA-03 | TBD | Pending |
-| INFRA-04 | TBD | Pending |
-| SETUP-01 | TBD | Pending |
-| SETUP-02 | TBD | Pending |
-| SETUP-03 | TBD | Pending |
-| INTR-01 | TBD | Pending |
-| INTR-02 | TBD | Pending |
-| INTR-03 | TBD | Pending |
-| INTR-04 | TBD | Pending |
-| UI-01 | TBD | Pending |
-| UI-02 | TBD | Pending |
-| UI-03 | TBD | Pending |
-| REAL-01 | TBD | Pending |
-| REAL-02 | TBD | Pending |
-| REAL-03 | TBD | Pending |
-| CONT-01 | TBD | Pending |
-| CONT-02 | TBD | Pending |
-| CONT-03 | TBD | Pending |
+| INFRA-01 | Phase 1 | Pending |
+| INFRA-02 | Phase 1 | Pending |
+| INFRA-03 | Phase 1 | Pending |
+| INFRA-04 | Phase 1 | Pending |
+| CONT-01 | Phase 1 | Pending |
+| CONT-02 | Phase 1 | Pending |
+| CONT-03 | Phase 1 | Pending |
+| SETUP-01 | Phase 2 | Pending |
+| SETUP-02 | Phase 2 | Pending |
+| SETUP-03 | Phase 2 | Pending |
+| INTR-01 | Phase 3 | Pending |
+| INTR-02 | Phase 3 | Pending |
+| INTR-03 | Phase 3 | Pending |
+| INTR-04 | Phase 3 | Pending |
+| UI-01 | Phase 4 | Pending |
+| UI-02 | Phase 4 | Pending |
+| UI-03 | Phase 4 | Pending |
+| REAL-01 | Phase 5 | Pending |
+| REAL-02 | Phase 5 | Pending |
+| REAL-03 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 20 total
-- Mapped to phases: 0 (로드맵 생성 시 매핑)
-- Unmapped: 20 ⚠️
+- Mapped to phases: 20
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-06-19*
-*Last updated: 2026-06-19 after initial definition*
+*Last updated: 2026-06-19 after roadmap creation — all 20 v1 requirements mapped*
