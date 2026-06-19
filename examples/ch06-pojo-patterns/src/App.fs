@@ -39,8 +39,12 @@ let theme = jsOptions<ITheme>(fun t ->
 
 // ANCHOR: async-boundary
 // fetch is a JS global returning a Promise. Bridge it into F# async with Async.AwaitPromise.
+// Minimal interface for the browser Response object (text() returns a Promise<string>).
+type IResponse =
+    abstract text: unit -> JS.Promise<string>
+
 [<Global>]
-let fetch (url: string) : JS.Promise<Browser.Types.Response> = jsNative
+let fetch (url: string) : JS.Promise<IResponse> = jsNative
 
 let loadText (url: string) : Async<string> =
     async {
@@ -58,6 +62,18 @@ btn.onclick <- fun _ ->
     }
     |> Async.StartImmediate   // NOT Async.RunSynchronously (unsupported in Fable)
 // ANCHOR_END: async-boundary
+
+// ANCHOR: promise-ce
+// promise {} CE from Fable.Promise 3.2.0 — stays in Promise world (no Async wrapping).
+let loadTextP (url: string) : JS.Promise<string> =
+    promise {
+        let! resp = fetch url
+        let! text = resp.text()
+        return text
+    }
+// ANCHOR_END: promise-ce
+
+let _ = loadTextP "https://jsonplaceholder.typicode.com/todos/1" |> ignore
 
 let app = document.getElementById "app"
 let summary =
