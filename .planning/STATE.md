@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-06-19)
 ## Current Position
 
 Phase: 2 of 5 (Core Toolchain Chapters)
-Plan: 2 of 3 in current phase
-Status: In progress
-Last activity: 2026-06-19 — Completed 02-02-PLAN.md (Ch.2 컴파일 모델 — record/DU/numeric/option/tuple, Option None = undefined verified)
+Plan: 3 of 3 in current phase
+Status: Phase complete
+Last activity: 2026-06-19 — Completed 02-03-PLAN.md (Ch.3 Fable.Core 기초 — function-typed [<Global>], emitJsExpr, BCL table, scope boundary to Ch.4-6)
 
-Progress: [█████░░░░░] 25% (5/20 total plans)
+Progress: [██████░░░░] 30% (6/20 total plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
-- Average duration: 2min 3sec
-- Total execution time: 8min 16sec
+- Total plans completed: 6
+- Average duration: ~2min 18sec
+- Total execution time: ~11min 30sec
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | Phase 1 | 3/5 | 6m 20s | 2m 7s |
-| Phase 2 | 2/3 | 7m 56s | 3m 58s |
+| Phase 2 | 3/3 | ~11m 10s | ~3m 43s |
 
 **Recent Trend:**
-- Last 5 plans: 01-03 (1m 4s), 01-05 (1m 0s), 02-01 (1m 56s), 02-02 (~6m)
+- Last 5 plans: 01-05 (1m 0s), 02-01 (1m 56s), 02-02 (~6m), 02-03 (3m 14s)
 - Trend: consistent
 
 *Updated after each plan completion*
@@ -69,6 +69,9 @@ Recent decisions affecting current work:
 - [02-02]: decimal compiles to fromParts(...) Decimal class — NOT plain number
 - [02-02]: DU tag numbering is 0-based, matching F# declaration order (first case = 0)
 - [02-02]: record compiles to ES6 class extending Record (NOT POJO) — JS library interop needs special handling (see Ch.4/6)
+- [02-03]: function-typed `[<Global>] let consoleLog (msg: string) : unit = jsNative` compiles cleanly under Fable 5.3.0 — value-typed form avoidable
+- [02-03]: [<Global>]/[<Import>] in headings parsed as unclosed HTML tags by mdbook — wrap in backticks to suppress WARN
+- [02-03]: Explicit scope-boundary paragraph in Ch.3 names Ch.4/5/6 as home for Emit-binding/erased-union/StringEnum/POJO/dynamic
 
 ### Research Flags (Phase planning 시 참고)
 
@@ -87,5 +90,5 @@ Recent decisions affecting current work:
 ## Session Continuity
 
 Last session: 2026-06-19
-Stopped at: Completed 02-02-PLAN.md — Ch.2 컴파일 모델 with verified build (npm run build exits 0), Option None = undefined confirmed from actual App.fs.js, and full Korean chapter with five {{#include}} anchors
+Stopped at: Completed 02-03-PLAN.md — Ch.3 Fable.Core 기초 with function-typed [<Global>] consoleLog, emitJsExpr, BCL table, scope-boundary paragraph deferring Ch.4-6; Phase 2 complete (3/3 plans)
 Resume file: None
