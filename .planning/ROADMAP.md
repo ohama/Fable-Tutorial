@@ -69,13 +69,13 @@ Plans:
   3. 독자가 Ch.6 예제를 실행하여 `[<JS.Pojo>]`·`createObj`·`jsOptions`·anonymous record 중 상황에 맞는 POJO 패턴을 선택할 수 있다.
   4. 독자가 Ch.6 예제를 통해 JS `Promise`와 F# `Async`/`Task` 사이의 비동기 경계를 변환하는 코드를 실행한다.
   5. 독자가 Ch.7 지시를 따라 실제 npm 라이브러리(TypeScript 타입 정의 포함)에 대한 Fable 바인딩을 ts2fable/Glutinum 도구로 처음부터 완성하고 예제 앱에서 동작시킨다.
-**Plans**: TBD
+**Plans**: 4 plans (3 waves: 03-01 + 03-02 parallel, then 03-03, then 03-04)
 
 Plans:
-- [ ] 03-01: Ch.4 — 기본 Interop 챕터 작성 (Emit, Import, Global, dynamic)
-- [ ] 03-02: Ch.5 — 고급 Interop 챕터 작성 (erased union U2-U9, StringEnum, Erase)
-- [ ] 03-03: Ch.6 — POJO 패턴 챕터 작성 (createObj, jsOptions, JS.Pojo, anonymous record; 비동기 경계)
-- [ ] 03-04: Ch.7 — npm 라이브러리 바인딩 챕터 작성 (ts2fable/Glutinum 도구, end-to-end)
+- [ ] 03-01-PLAN.md — Ch.4 기본 Interop: Emit/Import/Global/dynamic 4가지 호출 방식 + 생성 JS 대조 (wave 1)
+- [ ] 03-02-PLAN.md — Ch.5 고급 Interop: erased union U2<int,float> typeof 충돌 실측 + StringEnum (wave 1)
+- [ ] 03-03-PLAN.md — Ch.6 POJO 패턴 + 비동기 경계: 4가지 POJO + Promise↔Async (open-Q 검증) (wave 2)
+- [ ] 03-04-PLAN.md — Ch.7 npm 바인딩: canvas-confetti ImportDefault 수기 바인딩 + Glutinum/ts2fable (wave 3)
 
 ---
 
@@ -124,7 +124,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Infrastructure Foundation | 5/5 | ✓ Complete | 2026-06-19 |
 | 2. Core Toolchain Chapters (Ch.1-3) | 3/3 | ✓ Complete | 2026-06-19 |
-| 3. JS Interop Axis (Ch.4-7) | 0/4 | Not started | - |
+| 3. JS Interop Axis (Ch.4-7) | 0/4 | Planned | - |
 | 4. Elmish and UI Axis (Ch.8-10) | 0/3 | Not started | - |
 | 5. Ecosystem and Real-World Axis (Ch.11-13) | 0/3 | Not started | - |
 
