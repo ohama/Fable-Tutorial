@@ -1,0 +1,17 @@
+{
+  "name": "ch09-feliz",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "dotnet fable watch --verbose --run npx vite",
+    "build": "dotnet fable --run npx vite build"
+  },
+  "dependencies": {
+    "react": "^18.3",
+    "react-dom": "^18.3"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
