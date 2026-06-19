@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>Ch01Setup</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="src/App.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Fable.Core" Version="5.0.0" />
+  </ItemGroup>
+</Project>
