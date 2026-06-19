@@ -5,33 +5,34 @@
 See: .planning/PROJECT.md (updated 2026-06-19)
 
 **Core value:** F#을 아는 개발자가 이 튜토리얼만 따라가면 Fable로 실제 동작하는 웹 앱을 만들 수 있다.
-**Current focus:** Phase 1 — Infrastructure Foundation
+**Current focus:** Phase 2 — Core Toolchain Chapters
 
 ## Current Position
 
-Phase: 1 of 5 (Infrastructure Foundation)
-Plan: 5 of 5 in current phase (all committed)
-Status: Phase complete
-Last activity: 2026-06-19 — Completed 01-04-PLAN.md (GitHub Pages live deploy) + 01-05-PLAN.md (chapter authoring template)
+Phase: 2 of 5 (Core Toolchain Chapters)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-06-19 — Completed 02-01-PLAN.md (Ch.1 프로젝트 설정 — verified Fable build pipeline)
 
-Progress: [███░░░░░░░] 15% (3/20 total plans)
+Progress: [████░░░░░░] 20% (4/20 total plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: 2min 8sec
-- Total execution time: 6min 20sec
+- Total plans completed: 4
+- Average duration: 2min 3sec
+- Total execution time: 8min 16sec
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | Phase 1 | 3/5 | 6m 20s | 2m 7s |
+| Phase 2 | 1/3 | 1m 56s | 1m 56s |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (4m 16s), 01-03 (1m 4s), 01-05 (1m 0s)
-- Trend: faster
+- Last 5 plans: 01-01 (4m 16s), 01-03 (1m 4s), 01-05 (1m 0s), 02-01 (1m 56s)
+- Trend: consistent
 
 *Updated after each plan completion*
 
@@ -58,6 +59,11 @@ Recent decisions affecting current work:
   - [01-04]: Resolved OWNER/REPO as ohama/Fable-Tutorial; live site at https://ohama.github.io/Fable-Tutorial/ (HTTP 200, F# highlighting, {{#include}} wiring confirmed)
   - [01-04]: configure-pages@v5 uses enablement:false — Pages must be enabled in Settings → Pages → Source: GitHub Actions BEFORE first successful run; first run failed (race), re-run after enabling succeeded (run 27805562106)
   - [01-04]: All three plugin binary URLs (mdBook 0.5.3, mdbook-admonish 1.20.0, mdbook-mermaid 0.17.0) verified live HTTP 302; no cargo install in CI
+- [02-01]: fsproj lives at EXAMPLE ROOT (examples/chNN-name/App.fsproj), not src/ — RESEARCH Pattern 2 was inaccurate; Compile Include="src/App.fs" is correct
+- [02-01]: Fable emits App.fs.js ADJACENT to source (src/App.fs → src/App.fs.js); index.html loads ./src/App.fs.js
+- [02-01]: Browser Fable apps have NO [<EntryPoint>] — module top-level statements execute directly
+- [02-01]: open Browser (from Fable.Browser.Dom 2.20.0) provides document global for DOM access
+- [02-01]: .gitignore updated: fable_modules/, **/*.fs.js, dist/ excluded from version control
 
 ### Research Flags (Phase planning 시 참고)
 
@@ -76,5 +82,5 @@ Recent decisions affecting current work:
 ## Session Continuity
 
 Last session: 2026-06-19
-Stopped at: Completed 01-04-PLAN.md (GitHub Pages deploy — live at https://ohama.github.io/Fable-Tutorial/) and 01-05-PLAN.md — Phase 1 fully complete
+Stopped at: Completed 02-01-PLAN.md — Ch.1 프로젝트 설정 with verified Fable 5.3.0 build pipeline; 02-01-SUMMARY.md is the canonical runnable-example-pattern reference for 02-02 and 02-03
 Resume file: None
