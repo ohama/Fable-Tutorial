@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-06-19)
 ## Current Position
 
 Phase: 1 of 5 (Infrastructure Foundation)
-Plan: 5 of 5 in current phase
+Plan: 5 of 5 in current phase (all committed)
 Status: Phase complete
-Last activity: 2026-06-19 — Completed 01-05-PLAN.md (chapter authoring template documented in-book)
+Last activity: 2026-06-19 — Completed 01-04-PLAN.md (GitHub Pages live deploy) + 01-05-PLAN.md (chapter authoring template)
 
 Progress: [███░░░░░░░] 15% (3/20 total plans)
 
@@ -55,6 +55,10 @@ Recent decisions affecting current work:
 - [01-05]: Literal {{#include}} display: \\{{#include}} in blockquote prose (backslash escape); unescaped inside fenced code block (mdBook does not resolve directives in code fences)
 - [01-05]: CONT-01/02/03 rules encoded by name in src/introduction.md "챕터 구조" section — future plans reference by code
 
+  - [01-04]: Resolved OWNER/REPO as ohama/Fable-Tutorial; live site at https://ohama.github.io/Fable-Tutorial/ (HTTP 200, F# highlighting, {{#include}} wiring confirmed)
+  - [01-04]: configure-pages@v5 uses enablement:false — Pages must be enabled in Settings → Pages → Source: GitHub Actions BEFORE first successful run; first run failed (race), re-run after enabling succeeded (run 27805562106)
+  - [01-04]: All three plugin binary URLs (mdBook 0.5.3, mdbook-admonish 1.20.0, mdbook-mermaid 0.17.0) verified live HTTP 302; no cargo install in CI
+
 ### Research Flags (Phase planning 시 참고)
 
 - Phase 3 Ch.7 (라이브러리 바인딩): 바인딩할 구체적 npm 패키지 결정 필요 (date-fns / chart.js 후보)
@@ -63,8 +67,7 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-- Replace OWNER/REPO placeholder in book.toml (plan 01-04)
-- Uncomment [preprocessor.admonish] and [preprocessor.mermaid] in book.toml when compatible versions release
+- Uncomment [preprocessor.admonish] and [preprocessor.mermaid] in book.toml when compatible versions release (blocked by mdbook 0.5.x incompatibility)
 
 ### Blockers/Concerns
 
@@ -72,6 +75,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-06-19T04:08:24Z
-Stopped at: Completed 01-05-PLAN.md (chapter authoring template in src/introduction.md) — Phase 1 complete
+Last session: 2026-06-19
+Stopped at: Completed 01-04-PLAN.md (GitHub Pages deploy — live at https://ohama.github.io/Fable-Tutorial/) and 01-05-PLAN.md — Phase 1 fully complete
 Resume file: None
