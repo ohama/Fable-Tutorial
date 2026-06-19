@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-06-19)
 ## Current Position
 
 Phase: 4 of 5 (Elmish and UI Axis)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-06-19 — Completed 04-01-PLAN.md (Ch.8 Elmish 아키텍처: React 18 + Feliz 3.3.3 + Fable.Elmish 5.0.2 스택 확립; Cmd.OfAsync.perform + Async.Sleep 비동기 MVU 루프 빌드 확인; 3가지 오픈 질문 해소 (Q4 Async.Sleep kept, Q2 Elmish.React 5.0.1 kept, Q3 react@18.3.1 locked))
+Last activity: 2026-06-19 — Completed 04-02-PLAN.md (Ch.9 Feliz 컴포넌트: Feliz.UseElmish 5.0.0 + React.useElmish 훅 + [<ReactComponent>] + ReactDOM.createRoot 마운트 빌드 확인; 2가지 오픈 질문 해소 (both-opens required, createRoot compiled); react@18.3.1 재확인)
 
-Progress: [███████████░] 55% (11/20 total plans)
+Progress: [████████████░] 60% (12/20 total plans)
 
 ## Performance Metrics
 
@@ -30,11 +30,11 @@ Progress: [███████████░] 55% (11/20 total plans)
 | Phase 1 | 3/5 | 6m 20s | 2m 7s |
 | Phase 2 | 3/3 | ~11m 10s | ~3m 43s |
 | Phase 3 | 4/4 | ~27m | ~6.8m |
-| Phase 4 | 1/3 | ~3m 27s | ~3m 27s |
+| Phase 4 | 2/3 | ~6m 27s | ~3m 13s |
 
 **Recent Trend:**
-- Last 5 plans: 02-02 (~6m), 02-03 (3m 14s), 03-01 (~7m), 03-02 (~10m)
-- Trend: consistent
+- Last 5 plans: 02-03 (3m 14s), 03-01 (~7m), 03-02 (~10m), 04-01 (~3m 27s), 04-02 (~3m)
+- Trend: consistent, accelerating
 
 *Updated after each plan completion*
 
@@ -98,6 +98,10 @@ Recent decisions affecting current work:
 - [04-01]: react/react-dom은 반드시 package.json "dependencies"에 (devDependencies X) — 번들러가 devDeps를 외부 모듈로 취급해 "Cannot find module 'react'" 오류 발생
 - [04-01]: @vitejs/plugin-react 불필요 — Feliz가 React.createElement(HtmlHelper_createElement)로 직접 컴파일; JSX 변환 없음
 - [04-01]: Program.withReactSynchronous "root" mount — 문자열 "root"와 HTML div id="root"가 정확히 일치해야; 불일치 시 빈 화면 (오류 없음)
+- [04-02]: React.useElmish는 open Feliz + open Feliz.UseElmish 둘 다 필요 — 훅이 Feliz의 React 타입 확장으로 정의되어 있어 어느 한 쪽이라도 빠지면 컴파일 오류 발생
+- [04-02]: ReactDOM.createRoot 마운트 컴파일 성공 — emitted: createRoot from react-dom/client; root.render(createElement(Counter,null)); deprecated ReactDOM.render 불필요
+- [04-02]: Fable.Elmish.React 불필요 (createRoot 마운트 경로) — Feliz + Feliz.UseElmish + Fable.Elmish만으로 충분; Program.withReactSynchronous 사용하는 Ch.8만 필요
+- [04-02]: react@18.3.1 재확인 — ^18.3 범위가 Ch.8과 동일하게 18.3.1로 해석; Feliz 3.3.3은 React 19 미지원
 
 ### Research Flags (Phase planning 시 참고)
 
@@ -115,6 +119,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-06-19T08:57:27Z
-Stopped at: Completed 04-01-PLAN.md — Ch.8 Elmish 아키텍처: React 18 + Feliz 3.3.3 + Fable.Elmish 5.0.2 스택 확립; Cmd.OfAsync.perform + Async.Sleep 비동기 MVU 루프 빌드 확인; 3가지 오픈 질문 해소 (Q4 Async.Sleep kept, Q2 Elmish.React 5.0.1 kept, Q3 react@18.3.1 locked); npm run build exit 0; mdbook build exit 0
+Last session: 2026-06-19T09:04:10Z
+Stopped at: Completed 04-02-PLAN.md — Ch.9 Feliz 컴포넌트: [<ReactComponent>] + React.useElmish(init,update,[||]) + ReactDOM.createRoot 마운트 빌드 확인; both-opens requirement resolved; Feliz.UseElmish 5.0.0 추가; react@18.3.1 재확인; mdbook build exit 0
 Resume file: None
