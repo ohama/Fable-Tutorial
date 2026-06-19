@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-06-19)
 ## Current Position
 
 Phase: 1 of 5 (Infrastructure Foundation)
-Plan: 1 of 4 in current phase
+Plan: 3 of 4 in current phase
 Status: In progress
-Last activity: 2026-06-19 — Completed 01-01-PLAN.md (mdBook scaffold)
+Last activity: 2026-06-19 — Completed 01-03-PLAN.md ({{#include}} anchor wiring proof)
 
-Progress: [█░░░░░░░░░] 5% (1/20 total plans)
+Progress: [██░░░░░░░░] 10% (2/20 total plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: 4min
-- Total execution time: 4min 16sec
+- Total plans completed: 2
+- Average duration: 2min 40sec
+- Total execution time: 5min 20sec
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| Phase 1 | 1/4 | 4m 16s | 4m 16s |
+| Phase 1 | 2/4 | 5m 20s | 2m 40s |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (4m 16s)
-- Trend: —
+- Last 5 plans: 01-01 (4m 16s), 01-03 (1m 4s)
+- Trend: faster
 
 *Updated after each plan completion*
 
@@ -48,6 +48,8 @@ Recent decisions affecting current work:
 - [Init]: 코드는 반드시 `{{#include}}` 앵커로 인용 — markdown에 직접 붙여넣기 금지 (silent rot 방지)
 - [01-01]: mdbook-admonish 1.20.0 / mdbook-mermaid 0.17.0 은 mdbook 0.5.x와 프로토콜 비호환 — 이들 플러그인이 0.5.x를 지원할 때까지 preprocessor 블록은 book.toml에서 주석 처리
 - [01-01]: OWNER/REPO placeholder를 book.toml의 git-repository-url에 유지 — plan 01-04에서 실제 GitHub URL로 교체
+- [01-03]: Include path는 markdown 파일 기준 상대경로: src/ch01-setup/index.md → ../../examples/ch01-setup/src/App.fs (두 번 ../로 repo root 탈출)
+- [01-03]: examples/chNN-name/ 독립 예제 구조: App.fsproj (net10.0, Fable.Core 5.0.0) + package.json (--verbose 필수) + vite.config.js (.fs 제외) + index.html
 
 ### Research Flags (Phase planning 시 참고)
 
@@ -66,6 +68,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-06-19T03:58:44Z
-Stopped at: Completed 01-01-PLAN.md (mdBook scaffold with 13-chapter stubs)
+Last session: 2026-06-19T04:03:28Z
+Stopped at: Completed 01-03-PLAN.md ({{#include}} anchor wiring proof + ch01 example project)
 Resume file: None
