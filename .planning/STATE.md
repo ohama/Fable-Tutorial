@@ -10,27 +10,27 @@ See: .planning/PROJECT.md (updated 2026-06-19)
 ## Current Position
 
 Phase: 1 of 5 (Infrastructure Foundation)
-Plan: 3 of 4 in current phase
-Status: In progress
-Last activity: 2026-06-19 — Completed 01-03-PLAN.md ({{#include}} anchor wiring proof)
+Plan: 5 of 5 in current phase
+Status: Phase complete
+Last activity: 2026-06-19 — Completed 01-05-PLAN.md (chapter authoring template documented in-book)
 
-Progress: [██░░░░░░░░] 10% (2/20 total plans)
+Progress: [███░░░░░░░] 15% (3/20 total plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: 2min 40sec
-- Total execution time: 5min 20sec
+- Total plans completed: 3
+- Average duration: 2min 8sec
+- Total execution time: 6min 20sec
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| Phase 1 | 2/4 | 5m 20s | 2m 40s |
+| Phase 1 | 3/5 | 6m 20s | 2m 7s |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (4m 16s), 01-03 (1m 4s)
+- Last 5 plans: 01-01 (4m 16s), 01-03 (1m 4s), 01-05 (1m 0s)
 - Trend: faster
 
 *Updated after each plan completion*
@@ -52,6 +52,8 @@ Recent decisions affecting current work:
 - [01-02]: theme/highlight.js 번들: grmr_fsharp 포함, classPrefix:"hljs-", 24433 bytes — fsharp 펜스 식별자 표준 확정
 - [01-03]: Include path는 markdown 파일 기준 상대경로: src/ch01-setup/index.md → ../../examples/ch01-setup/src/App.fs (두 번 ../로 repo root 탈출)
 - [01-03]: examples/chNN-name/ 독립 예제 구조: App.fsproj (net10.0, Fable.Core 5.0.0) + package.json (--verbose 필수) + vite.config.js (.fs 제외) + index.html
+- [01-05]: Literal {{#include}} display: \\{{#include}} in blockquote prose (backslash escape); unescaped inside fenced code block (mdBook does not resolve directives in code fences)
+- [01-05]: CONT-01/02/03 rules encoded by name in src/introduction.md "챕터 구조" section — future plans reference by code
 
 ### Research Flags (Phase planning 시 참고)
 
@@ -70,6 +72,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-06-19T04:04:39Z
-Stopped at: Completed 01-02-PLAN.md (F# syntax highlighting with custom highlight.js) and 01-03-PLAN.md ({{#include}} anchor wiring proof + ch01 example project) — both plans ran in parallel
+Last session: 2026-06-19T04:08:24Z
+Stopped at: Completed 01-05-PLAN.md (chapter authoring template in src/introduction.md) — Phase 1 complete
 Resume file: None
