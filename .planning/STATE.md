@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-06-19)
 ## Current Position
 
 Phase: 4 of 5 (Elmish and UI Axis)
-Plan: 2 of 3 in current phase
-Status: In progress
-Last activity: 2026-06-19 — Completed 04-02-PLAN.md (Ch.9 Feliz 컴포넌트: Feliz.UseElmish 5.0.0 + React.useElmish 훅 + [<ReactComponent>] + ReactDOM.createRoot 마운트 빌드 확인; 2가지 오픈 질문 해소 (both-opens required, createRoot compiled); react@18.3.1 재확인)
+Plan: 3 of 3 in current phase
+Status: Phase complete
+Last activity: 2026-06-19 — Completed 04-03-PLAN.md (Ch.10 SPA 라우팅: Feliz.Router 4.0.0 Feliz 3.3.3 비호환 확인 (Open Q #1 해소); 수동 hashchange 구독 폴백 적용; Program.withSubscription + IDisposable cleanup; 4개 {{#include}} 앵커; mdbook build exit 0)
 
-Progress: [████████████░] 60% (12/20 total plans)
+Progress: [█████████████░] 65% (13/20 total plans)
 
 ## Performance Metrics
 
@@ -30,11 +30,11 @@ Progress: [████████████░] 60% (12/20 total plans)
 | Phase 1 | 3/5 | 6m 20s | 2m 7s |
 | Phase 2 | 3/3 | ~11m 10s | ~3m 43s |
 | Phase 3 | 4/4 | ~27m | ~6.8m |
-| Phase 4 | 2/3 | ~6m 27s | ~3m 13s |
+| Phase 4 | 3/3 | ~10m 33s | ~3m 31s |
 
 **Recent Trend:**
-- Last 5 plans: 02-03 (3m 14s), 03-01 (~7m), 03-02 (~10m), 04-01 (~3m 27s), 04-02 (~3m)
-- Trend: consistent, accelerating
+- Last 5 plans: 03-02 (~10m), 03-04 (~6m), 04-01 (~3m 27s), 04-02 (~3m), 04-03 (~4m 6s)
+- Trend: consistent, Phase 4 complete
 
 *Updated after each plan completion*
 
@@ -102,12 +102,17 @@ Recent decisions affecting current work:
 - [04-02]: ReactDOM.createRoot 마운트 컴파일 성공 — emitted: createRoot from react-dom/client; root.render(createElement(Counter,null)); deprecated ReactDOM.render 불필요
 - [04-02]: Fable.Elmish.React 불필요 (createRoot 마운트 경로) — Feliz + Feliz.UseElmish + Fable.Elmish만으로 충분; Program.withReactSynchronous 사용하는 Ch.8만 필요
 - [04-02]: react@18.3.1 재확인 — ^18.3 범위가 Ch.8과 동일하게 18.3.1로 해석; Feliz 3.3.3은 React 19 미지원
+- [04-03]: Feliz.Router 4.0.0은 Feliz 3.3.3과 비호환 — useCallbackRef, createDisposable, fragment가 Feliz 3.x에 없음; 5개 컴파일 오류 (Open Q #1 해소: FALLBACK)
+- [04-03]: 수동 hashchange 구독: Program.withSubscription + window.addEventListener("hashchange") + IDisposable.Dispose → removeEventListener (Pitfall 9 준수)
+- [04-03]: parseHash() = window.location.hash에서 #/접두사 제거 후 /로 분할 → string list; formatHash() = segments → "#/seg1/seg2" href 문자열
+- [04-03]: Feliz.Router 사용하려면 Feliz 4.x로 업그레이드 필요 — Phase 5 계획 시 참고
 
 ### Research Flags (Phase planning 시 참고)
 
 - Phase 3 Ch.7 (라이브러리 바인딩): canvas-confetti로 결정 및 완료 — RESOLVED in 03-04
 - Phase 5 Ch.12 (테스트): Fable.Mocha + Fable 5 호환성 미확인 — Phase 2 또는 3 중 POC 빌드 검증 필요
 - [01-01]: mdbook-admonish와 mdbook-mermaid가 mdbook 0.5.x를 지원하는 버전을 출시하는지 모니터링 필요
+- [04-03]: Feliz.Router 4.0.0 Feliz 3.3.3 비호환 확인 — Phase 5에서 Feliz.Router 재시도 시 Feliz 4.x 업그레이드 필요 (트레이드오프: 전체 Feliz API 변경 수반)
 
 ### Pending Todos
 
@@ -119,6 +124,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-06-19T09:04:10Z
-Stopped at: Completed 04-02-PLAN.md — Ch.9 Feliz 컴포넌트: [<ReactComponent>] + React.useElmish(init,update,[||]) + ReactDOM.createRoot 마운트 빌드 확인; both-opens requirement resolved; Feliz.UseElmish 5.0.0 추가; react@18.3.1 재확인; mdbook build exit 0
+Last session: 2026-06-19T09:05:32Z
+Stopped at: Completed 04-03-PLAN.md — Ch.10 SPA 라우팅: Feliz.Router 4.0.0 Feliz 3.3.3 비호환 확인 (Open Q #1 해소, FALLBACK 적용); Program.withSubscription hashchange 리스너 + IDisposable cleanup; 3-page SPA build exit 0; 4 {{#include}} 앵커; mdbook build exit 0; Phase 4 전체 완료
 Resume file: None
