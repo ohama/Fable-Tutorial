@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-06-19)
 
 **Core value:** F#을 아는 개발자가 이 튜토리얼만 따라가면 Fable로 실제 동작하는 웹 앱을 만들 수 있다.
-**Current focus:** Phase 3 — JS Interop Axis
+**Current focus:** Phase 4 — Elmish and UI Axis
 
 ## Current Position
 
-Phase: 3 of 5 (JS Interop Axis)
-Plan: 4 of 4 in current phase
-Status: Phase 3 complete
-Last activity: 2026-06-19 — Completed 03-04-PLAN.md (Ch.7 npm 라이브러리 바인딩: canvas-confetti ImportDefault 바인딩, Glutinum CLI 실행으로 Open Q#2 해소, App.fs.js 기본 임포트 + 평이한 옵션 리터럴 확인)
+Phase: 4 of 5 (Elmish and UI Axis)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-06-19 — Completed 04-01-PLAN.md (Ch.8 Elmish 아키텍처: React 18 + Feliz 3.3.3 + Fable.Elmish 5.0.2 스택 확립; Cmd.OfAsync.perform + Async.Sleep 비동기 MVU 루프 빌드 확인; 3가지 오픈 질문 해소 (Q4 Async.Sleep kept, Q2 Elmish.React 5.0.1 kept, Q3 react@18.3.1 locked))
 
-Progress: [█████████░] 50% (10/20 total plans)
+Progress: [███████████░] 55% (11/20 total plans)
 
 ## Performance Metrics
 
@@ -30,6 +30,7 @@ Progress: [█████████░] 50% (10/20 total plans)
 | Phase 1 | 3/5 | 6m 20s | 2m 7s |
 | Phase 2 | 3/3 | ~11m 10s | ~3m 43s |
 | Phase 3 | 4/4 | ~27m | ~6.8m |
+| Phase 4 | 1/3 | ~3m 27s | ~3m 27s |
 
 **Recent Trend:**
 - Last 5 plans: 02-02 (~6m), 02-03 (3m 14s), 03-01 (~7m), 03-02 (~10m)
@@ -91,6 +92,12 @@ Recent decisions affecting current work:
 - [03-04]: ts2fable 0.7.1이 동일 .d.ts에 대해 `Import("*","canvas-confetti")` (importAll) 생성 — 역시 CommonJS `export=` 직접 호출 패턴에 부적합
 - [03-04]: 두 파일 fsproj 패턴 — CanvasConfetti.fs(바인딩) BEFORE App.fs(소비자) in Compile order; F# 파일 선언 순서가 참조 해석에 영향
 - [03-04]: canvas-confetti는 npm `dependencies`(Vite 번들 시 필요), @types/canvas-confetti는 `devDependencies`(타입 검사용, 번들 불필요)
+- [04-01]: Async.Sleep 800은 Fable 5.3.0에서 컴파일 성공 — fable-library-js/Async.js의 sleep() (setTimeout 기반)로 변환; Promise 폴백 불필요
+- [04-01]: Fable.Elmish.React 5.0.1 빌드 성공; 5.6.0 업그레이드 불필요; remount-flicker는 브라우저 전용 human-verify 항목 (빌드 실패 아님)
+- [04-01]: react@^18.3이 18.3.1로 해석됨; react-dom@^18.3이 18.3.1로 해석됨; Feliz 3.3.3은 React 19 미지원
+- [04-01]: react/react-dom은 반드시 package.json "dependencies"에 (devDependencies X) — 번들러가 devDeps를 외부 모듈로 취급해 "Cannot find module 'react'" 오류 발생
+- [04-01]: @vitejs/plugin-react 불필요 — Feliz가 React.createElement(HtmlHelper_createElement)로 직접 컴파일; JSX 변환 없음
+- [04-01]: Program.withReactSynchronous "root" mount — 문자열 "root"와 HTML div id="root"가 정확히 일치해야; 불일치 시 빈 화면 (오류 없음)
 
 ### Research Flags (Phase planning 시 참고)
 
@@ -108,6 +115,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-06-19T07:50:29Z
-Stopped at: Completed 03-04-PLAN.md — Ch.7 npm 라이브러리 바인딩 (Phase 3 capstone): canvas-confetti [<ImportDefault>] + [<JS.Pojo>] 수기 바인딩 확인; Glutinum CLI 실행으로 Open Q#2 해소(명명된 임포트/플레이스홀더 생성, ImportDefault 아님); ts2fable importAll 생성 확인; npm run build exit 0; App.fs.js 기본 임포트 + 평이한 옵션 리터럴 검증; Phase 3 COMPLETE (4/4 plans)
+Last session: 2026-06-19T08:57:27Z
+Stopped at: Completed 04-01-PLAN.md — Ch.8 Elmish 아키텍처: React 18 + Feliz 3.3.3 + Fable.Elmish 5.0.2 스택 확립; Cmd.OfAsync.perform + Async.Sleep 비동기 MVU 루프 빌드 확인; 3가지 오픈 질문 해소 (Q4 Async.Sleep kept, Q2 Elmish.React 5.0.1 kept, Q3 react@18.3.1 locked); npm run build exit 0; mdbook build exit 0
 Resume file: None
