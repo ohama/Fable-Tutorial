@@ -22,10 +22,10 @@
 
 ### JS Interop (interop축, Ch.4-7)
 
-- [ ] **INTR-01**: 독자가 Emit / Import / Global과 dynamic(?) 접근으로 JS 코드를 호출할 수 있다
-- [ ] **INTR-02**: 독자가 [<JS.Pojo>]와 erased union(U2/U3)을 사용하고 관련 함정(typeof 충돌 등)을 피할 수 있다
-- [ ] **INTR-03**: 독자가 JS Promise와 F# Async/Task 사이를 변환하며 비동기 경계를 다룰 수 있다
-- [ ] **INTR-04**: 독자가 실제 npm 라이브러리를 처음부터 바인딩할 수 있다 (Glutinum/ts2fable 도구 포함)
+- [x] **INTR-01**: 독자가 Emit / Import / Global과 dynamic(?) 접근으로 JS 코드를 호출할 수 있다
+- [x] **INTR-02**: 독자가 [<JS.Pojo>]와 erased union(U2/U3)을 사용하고 관련 함정(typeof 충돌 등)을 피할 수 있다
+- [x] **INTR-03**: 독자가 JS Promise와 F# Async/Task 사이를 변환하며 비동기 경계를 다룰 수 있다
+- [x] **INTR-04**: 독자가 실제 npm 라이브러리를 처음부터 바인딩할 수 있다 (Glutinum/ts2fable 도구 포함)
 
 ### Elmish & UI (UI축, Ch.8-10)
 
@@ -81,10 +81,10 @@
 | SETUP-01 | Phase 2 | Complete |
 | SETUP-02 | Phase 2 | Complete |
 | SETUP-03 | Phase 2 | Complete |
-| INTR-01 | Phase 3 | Pending |
-| INTR-02 | Phase 3 | Pending |
-| INTR-03 | Phase 3 | Pending |
-| INTR-04 | Phase 3 | Pending |
+| INTR-01 | Phase 3 | Complete |
+| INTR-02 | Phase 3 | Complete |
+| INTR-03 | Phase 3 | Complete |
+| INTR-04 | Phase 3 | Complete |
 | UI-01 | Phase 4 | Pending |
 | UI-02 | Phase 4 | Pending |
 | UI-03 | Phase 4 | Pending |

@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Infrastructure Foundation** - mdBook 골격 + F# 구문 강조 + CI/CD 파이프라인 확립 ✓
 - [x] **Phase 2: Core Toolchain Chapters (Ch.1-3)** - 프로젝트 셋업·컴파일 모델·Fable.Core 기초 챕터 작성 ✓
-- [ ] **Phase 3: JS Interop Axis (Ch.4-7)** - Emit/Import/Global·erased union·POJO·라이브러리 바인딩 챕터 작성
+- [x] **Phase 3: JS Interop Axis (Ch.4-7)** - Emit/Import/Global·erased union·POJO·라이브러리 바인딩 챕터 작성 ✓
 - [ ] **Phase 4: Elmish and UI Axis (Ch.8-10)** - Elmish MVU·Feliz 컴포넌트·SPA 라우팅 챕터 작성
 - [ ] **Phase 5: Ecosystem and Real-World Axis (Ch.11-13)** - Thoth.Json+HTTP·테스트·빌드 최적화 챕터 작성
 
@@ -72,10 +72,10 @@ Plans:
 **Plans**: 4 plans (3 waves: 03-01 + 03-02 parallel, then 03-03, then 03-04)
 
 Plans:
-- [ ] 03-01-PLAN.md — Ch.4 기본 Interop: Emit/Import/Global/dynamic 4가지 호출 방식 + 생성 JS 대조 (wave 1)
-- [ ] 03-02-PLAN.md — Ch.5 고급 Interop: erased union U2<int,float> typeof 충돌 실측 + StringEnum (wave 1)
-- [ ] 03-03-PLAN.md — Ch.6 POJO 패턴 + 비동기 경계: 4가지 POJO + Promise↔Async (open-Q 검증) (wave 2)
-- [ ] 03-04-PLAN.md — Ch.7 npm 바인딩: canvas-confetti ImportDefault 수기 바인딩 + Glutinum/ts2fable (wave 3)
+- [x] 03-01-PLAN.md — Ch.4 기본 Interop: Emit/Import/Global/dynamic 4가지 호출 방식 + 생성 JS 대조 (wave 1)
+- [x] 03-02-PLAN.md — Ch.5 고급 Interop: erased union U2<int,float> typeof 충돌 실측 + StringEnum (wave 1)
+- [x] 03-03-PLAN.md — Ch.6 POJO 패턴 + 비동기 경계: 4가지 POJO + Promise↔Async (open-Q 검증) (wave 2)
+- [x] 03-04-PLAN.md — Ch.7 npm 바인딩: canvas-confetti ImportDefault 수기 바인딩 + Glutinum/ts2fable (wave 3)
 
 ---
 
@@ -124,7 +124,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Infrastructure Foundation | 5/5 | ✓ Complete | 2026-06-19 |
 | 2. Core Toolchain Chapters (Ch.1-3) | 3/3 | ✓ Complete | 2026-06-19 |
-| 3. JS Interop Axis (Ch.4-7) | 0/4 | Planned | - |
+| 3. JS Interop Axis (Ch.4-7) | 4/4 | ✓ Complete | 2026-06-19 |
 | 4. Elmish and UI Axis (Ch.8-10) | 0/3 | Not started | - |
 | 5. Ecosystem and Real-World Axis (Ch.11-13) | 0/3 | Not started | - |
 
