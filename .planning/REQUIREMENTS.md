@@ -9,10 +9,10 @@
 
 ### Infrastructure (책 토대)
 
-- [ ] **INFRA-01**: mdBook 사이트 골격(book.toml, src/SUMMARY.md, 디렉터리 구조)이 빌드된다
-- [ ] **INFRA-02**: F# 코드 블록이 커스텀 highlight.js로 구문 강조되어 렌더링된다
-- [ ] **INFRA-03**: 챕터 작성 표준 템플릿과 {{#include}} 앵커 배선이 갖춰져 예제 .fs 파일이 본문에 인용된다
-- [ ] **INFRA-04**: push 시 GitHub Actions로 책이 자동 빌드되어 GitHub Pages에 배포된다
+- [x] **INFRA-01**: mdBook 사이트 골격(book.toml, src/SUMMARY.md, 디렉터리 구조)이 빌드된다
+- [x] **INFRA-02**: F# 코드 블록이 커스텀 highlight.js로 구문 강조되어 렌더링된다
+- [x] **INFRA-03**: 챕터 작성 표준 템플릿과 {{#include}} 앵커 배선이 갖춰져 예제 .fs 파일이 본문에 인용된다
+- [x] **INFRA-04**: push 시 GitHub Actions로 책이 자동 빌드되어 GitHub Pages에 배포된다
 
 ### Setup & Compile Model (기초축, Ch.1-3)
 
@@ -41,9 +41,9 @@
 
 ### Content & Format (전 챕터 공통)
 
-- [ ] **CONT-01**: 각 챕터가 "개념 설명 → 예제 코드"의 일관된 흐름을 따른다
-- [ ] **CONT-02**: 각 챕터마다 독립적으로 실행 가능한 예제 프로젝트(.fsproj + package.json)를 제공한다
-- [ ] **CONT-03**: 본문은 한국어로 작성하고 기술 용어는 필요 시 영어를 병기한다
+- [x] **CONT-01**: 각 챕터가 "개념 설명 → 예제 코드"의 일관된 흐름을 따른다
+- [x] **CONT-02**: 각 챕터마다 독립적으로 실행 가능한 예제 프로젝트(.fsproj + package.json)를 제공한다
+- [x] **CONT-03**: 본문은 한국어로 작성하고 기술 용어는 필요 시 영어를 병기한다
 
 ## v2 Requirements
 
@@ -71,13 +71,13 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01 | Phase 1 | Pending |
-| INFRA-02 | Phase 1 | Pending |
-| INFRA-03 | Phase 1 | Pending |
-| INFRA-04 | Phase 1 | Pending |
-| CONT-01 | Phase 1 | Pending |
-| CONT-02 | Phase 1 | Pending |
-| CONT-03 | Phase 1 | Pending |
+| INFRA-01 | Phase 1 | Complete |
+| INFRA-02 | Phase 1 | Complete |
+| INFRA-03 | Phase 1 | Complete |
+| INFRA-04 | Phase 1 | Complete |
+| CONT-01 | Phase 1 | Complete |
+| CONT-02 | Phase 1 | Complete |
+| CONT-03 | Phase 1 | Complete |
 | SETUP-01 | Phase 2 | Pending |
 | SETUP-02 | Phase 2 | Pending |
 | SETUP-03 | Phase 2 | Pending |

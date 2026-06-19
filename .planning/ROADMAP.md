@@ -12,7 +12,7 @@ F#을 아는 개발자가 Fable로 실제 동작하는 웹 앱을 만들 수 있
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Infrastructure Foundation** - mdBook 골격 + F# 구문 강조 + CI/CD 파이프라인 확립
+- [x] **Phase 1: Infrastructure Foundation** - mdBook 골격 + F# 구문 강조 + CI/CD 파이프라인 확립 ✓
 - [ ] **Phase 2: Core Toolchain Chapters (Ch.1-3)** - 프로젝트 셋업·컴파일 모델·Fable.Core 기초 챕터 작성
 - [ ] **Phase 3: JS Interop Axis (Ch.4-7)** - Emit/Import/Global·erased union·POJO·라이브러리 바인딩 챕터 작성
 - [ ] **Phase 4: Elmish and UI Axis (Ch.8-10)** - Elmish MVU·Feliz 컴포넌트·SPA 라우팅 챕터 작성
@@ -33,11 +33,11 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 5 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — mdBook 골격 (book.toml src="src", SUMMARY.md, 13장 stub, .NET/Fable pin, admonish/mermaid)
-- [ ] 01-02-PLAN.md — 커스텀 highlight.js 빌드 → theme/ 배치 (F# 컬러 구문 강조 검증)
-- [ ] 01-03-PLAN.md — {{#include}} 앵커 배선 proof + ch01-setup 독립 예제 구조
-- [ ] 01-04-PLAN.md — GitHub Actions book.yml (binary download + deploy-pages) + Pages 배포 (checkpoints)
-- [ ] 01-05-PLAN.md — 챕터 작성 표준 템플릿 문서화 (introduction.md 챕터 구조 섹션)
+- [x] 01-01-PLAN.md — mdBook 골격 (book.toml src="src", SUMMARY.md, 13장 stub, .NET/Fable pin, admonish/mermaid)
+- [x] 01-02-PLAN.md — 커스텀 highlight.js 빌드 → theme/ 배치 (F# 컬러 구문 강조 검증)
+- [x] 01-03-PLAN.md — {{#include}} 앵커 배선 proof + ch01-setup 독립 예제 구조
+- [x] 01-04-PLAN.md — GitHub Actions book.yml (binary download + deploy-pages) + Pages 배포 (checkpoints)
+- [x] 01-05-PLAN.md — 챕터 작성 표준 템플릿 문서화 (introduction.md 챕터 구조 섹션)
 
 ---
 
@@ -122,7 +122,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Infrastructure Foundation | 0/4 | Not started | - |
+| 1. Infrastructure Foundation | 5/5 | ✓ Complete | 2026-06-19 |
 | 2. Core Toolchain Chapters (Ch.1-3) | 0/3 | Not started | - |
 | 3. JS Interop Axis (Ch.4-7) | 0/4 | Not started | - |
 | 4. Elmish and UI Axis (Ch.8-10) | 0/3 | Not started | - |
