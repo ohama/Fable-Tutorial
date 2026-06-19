@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-06-19)
 
 ## Current Position
 
-Phase: 2 of 5 (Core Toolchain Chapters)
-Plan: 3 of 3 in current phase
-Status: Phase complete
-Last activity: 2026-06-19 — Completed 02-03-PLAN.md (Ch.3 Fable.Core 기초 — function-typed [<Global>], emitJsExpr, BCL table, scope boundary to Ch.4-6)
+Phase: 3 of 5 (JS Interop Axis)
+Plan: 1 of N in current phase
+Status: In progress
+Last activity: 2026-06-19 — Completed 03-01-PLAN.md (Ch.4 기본 Interop — [<Emit>]/[<Import>]/[<Global>]/dynamic ?, helpers.js, actual emitted JS documented)
 
-Progress: [██████░░░░] 30% (6/20 total plans)
+Progress: [███████░░░] 35% (7/20 total plans)
 
 ## Performance Metrics
 
@@ -29,9 +29,10 @@ Progress: [██████░░░░] 30% (6/20 total plans)
 |-------|-------|-------|----------|
 | Phase 1 | 3/5 | 6m 20s | 2m 7s |
 | Phase 2 | 3/3 | ~11m 10s | ~3m 43s |
+| Phase 3 | 1/? | ~7m | ~7m |
 
 **Recent Trend:**
-- Last 5 plans: 01-05 (1m 0s), 02-01 (1m 56s), 02-02 (~6m), 02-03 (3m 14s)
+- Last 5 plans: 02-01 (1m 56s), 02-02 (~6m), 02-03 (3m 14s), 03-01 (~7m)
 - Trend: consistent
 
 *Updated after each plan completion*
@@ -72,6 +73,9 @@ Recent decisions affecting current work:
 - [02-03]: function-typed `[<Global>] let consoleLog (msg: string) : unit = jsNative` compiles cleanly under Fable 5.3.0 — value-typed form avoidable
 - [02-03]: [<Global>]/[<Import>] in headings parsed as unclosed HTML tags by mdbook — wrap in backticks to suppress WARN
 - [02-03]: Explicit scope-boundary paragraph in Ch.3 names Ch.4/5/6 as home for Emit-binding/erased-union/StringEnum/POJO/dynamic
+- [03-01]: importDefault renames binding in emitted JS to avoid collision (helpers -> helpers_1) — document for readers
+- [03-01]: [<Emit>] produces no function definition in output; call site becomes inline expression with Fable integer coercion | 0
+- [03-01]: helpers.js is a hand-written local JS module (not generated) — committed to git; serves as local mock for Import/importDefault without needing npm packages
 
 ### Research Flags (Phase planning 시 참고)
 
@@ -90,5 +94,5 @@ Recent decisions affecting current work:
 ## Session Continuity
 
 Last session: 2026-06-19
-Stopped at: Completed 02-03-PLAN.md — Ch.3 Fable.Core 기초 with function-typed [<Global>] consoleLog, emitJsExpr, BCL table, scope-boundary paragraph deferring Ch.4-6; Phase 2 complete (3/3 plans)
+Stopped at: Completed 03-01-PLAN.md — Ch.4 기본 Interop with four-mechanism example ([<Emit>]/[<Import>]/[<Global>]/dynamic ?), helpers.js, actual emitted JS documented; Phase 3 in progress (1/N plans)
 Resume file: None
