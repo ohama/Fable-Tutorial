@@ -1,0 +1,5 @@
+book/
+bin/
+obj/
+node_modules/
+.DS_Store
