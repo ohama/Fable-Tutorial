@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-06-19)
 ## Current Position
 
 Phase: 3 of 5 (JS Interop Axis)
-Plan: 2 of N in current phase
+Plan: 3 of N in current phase
 Status: In progress
-Last activity: 2026-06-19 — Completed 03-02-PLAN.md (Ch.5 고급 Interop — erased unions: U2<int,float> typeof collision verified in actual App.fs.js, StringEnum bare-string confirmed)
+Last activity: 2026-06-19 — Completed 03-03-PLAN.md (Ch.6 POJO 패턴 + 비동기 경계: 4 POJO 패턴 plain object literal 검증, Fable.Promise 3.2.0 promise{} CE 호환 확인, Async.StartImmediate 컴파일 확인)
 
-Progress: [████████░░] 40% (8/20 total plans)
+Progress: [████████░░] 45% (9/20 total plans)
 
 ## Performance Metrics
 
@@ -29,7 +29,7 @@ Progress: [████████░░] 40% (8/20 total plans)
 |-------|-------|-------|----------|
 | Phase 1 | 3/5 | 6m 20s | 2m 7s |
 | Phase 2 | 3/3 | ~11m 10s | ~3m 43s |
-| Phase 3 | 2/? | ~17m | ~8.5m |
+| Phase 3 | 3/? | ~23m | ~7.7m |
 
 **Recent Trend:**
 - Last 5 plans: 02-02 (~6m), 02-03 (3m 14s), 03-01 (~7m), 03-02 (~10m)
@@ -80,6 +80,12 @@ Recent decisions affecting current work:
 - [03-02]: Fable erased-union typeof output order: Case2 → if-branch (typeof check), Case1 → else. For U2<A,B> with A=int,B=float: float wins the if, int in else is unreachable
 - [03-02]: handleSafe(U2<string,int>) → Case2(int) gets `if (typeof x === "number")`, Case1(string) gets `else` — both reachable (distinct JS types)
 - [03-02]: StringEnum(CaseRules.KebabCase): ContentBox → `export const sizing = "content-box"` — bare string literal, no runtime object
+- [03-03]: Fable.Promise 3.2.0 `promise {}` CE is compatible with Fable 5.3.0 (build exits 0); `open Promise` causes error 892 (RequireQualifiedAccess) — drop the open; PromiseImpl.fs [<AutoOpen>] exposes `promise` value globally without any open
+- [03-03]: Async.StartImmediate compiles to `startImmediate()` from fable-library-js/Async.js — confirmed in Fable 5.3.0; no fallback to StartWithContinuations needed
+- [03-03]: Async.map is NOT available in Fable — inline DOM writes inside async{} workflow before StartImmediate
+- [03-03]: Browser.Types.Response not exposed in Fable.Browser.Dom 2.20.0 — define minimal IResponse interface locally (abstract text: unit -> JS.Promise<string>) for fetch usage without Fable.Fetch package
+- [03-03]: [<JS.Pojo>] REQUIRES [<AllowNullLiteral>] — both attributes mandatory; omitting either causes compile error. Legacy [<Pojo>] / [<ParamObject>] not used in Fable 5
+- [03-03]: 4 POJO patterns all produce plain { ... } object literals in App.fs.js (none extends Record): anonymous record, [<JS.Pojo>] class (opts = { term: "hello" } — caseSensitive omitted), createObj, jsOptions<IFace>
 
 ### Research Flags (Phase planning 시 참고)
 
@@ -98,5 +104,5 @@ Recent decisions affecting current work:
 ## Session Continuity
 
 Last session: 2026-06-19
-Stopped at: Completed 03-02-PLAN.md — Ch.5 고급 Interop (erased unions): U2<int,float> typeof collision verified in actual App.fs.js; StringEnum bare-string confirmed; full Korean chapter with verified typeof quotes; Phase 3 in progress (2/N plans)
+Stopped at: Completed 03-03-PLAN.md — Ch.6 POJO 패턴 + 비동기 경계: 4 POJO 패턴 평이한 객체 리터럴 검증; Fable.Promise 3.2.0 promise{} CE Fable 5.3.0 호환 확인; Async.StartImmediate startImmediate() 컴파일 확인; IResponse 인터페이스 패턴 확립; Phase 3 in progress (3/N plans)
 Resume file: None
