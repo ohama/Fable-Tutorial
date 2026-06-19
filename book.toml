@@ -12,8 +12,8 @@ extra-watch-dirs = ["examples"]
 [output.html]
 default-theme = "light"
 preferred-dark-theme = "navy"
-git-repository-url = "https://github.com/OWNER/REPO"
-edit-url-template = "https://github.com/OWNER/REPO/edit/main/src/{path}"
+git-repository-url = "https://github.com/ohama/Fable-Tutorial"
+edit-url-template = "https://github.com/ohama/Fable-Tutorial/edit/main/src/{path}"
 additional-css = ["./mdbook-admonish.css"]
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
 
