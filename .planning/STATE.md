@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-06-19)
 ## Current Position
 
 Phase: 5 of 5 (Ecosystem and Real-World Axis)
-Plan: 3 of 3 in current phase (05-03 complete)
-Status: In progress (05-01 Ch.11, 05-02 Ch.12 parallel plans may be pending)
-Last activity: 2026-06-22 — Completed 05-03-PLAN.md (Ch.13 빌드 최적화와 배포: --noReflection exit 0 확인; Vite base GitHub Pages 설정; deploy-app.yml 교육 예제; 한국어 챕터; mdbook build exit 0)
+Plan: 3 of 3 in current phase (05-01, 05-03 complete; 05-02 Ch.12 may be pending)
+Status: In progress
+Last activity: 2026-06-22 — Completed 05-01-PLAN.md (Ch.11 JSON과 HTTP: Thoth.Json 10.5.1 수동 디코더 + Fable.Fetch 2.7.0 + Cmd.OfPromise.either; Async.AwaitPromise 비가용 해소; npm run build exit 0; mdbook build exit 0)
 
-Progress: [██████████████░] 70% (14/20 total plans)
+Progress: [███████████████░] 75% (15/20 total plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
-- Average duration: ~3min
-- Total execution time: ~21min 30sec
+- Total plans completed: 9
+- Average duration: ~5min
+- Total execution time: ~39min 0sec
 
 **By Phase:**
 
@@ -31,11 +31,11 @@ Progress: [██████████████░] 70% (14/20 total plans
 | Phase 2 | 3/3 | ~11m 10s | ~3m 43s |
 | Phase 3 | 4/4 | ~27m | ~6.8m |
 | Phase 4 | 3/3 | ~10m 33s | ~3m 31s |
-| Phase 5 | 1/3 (05-03) | ~4m 41s | — |
+| Phase 5 | 2/3 (05-01, 05-03) | ~22m 11s | ~11m 5s |
 
 **Recent Trend:**
-- Last 5 plans: 03-04 (~6m), 04-01 (~3m 27s), 04-02 (~3m), 04-03 (~4m 6s), 05-03 (~4m 41s)
-- Trend: consistent, ~4m per plan
+- Last 5 plans: 04-01 (~3m 27s), 04-02 (~3m), 04-03 (~4m 6s), 05-03 (~4m 41s), 05-01 (~17m 30s)
+- Trend: 05-01 longer due to Async.AwaitPromise investigation (blocking issue → root cause analysis → Cmd.OfPromise.either workaround)
 
 *Updated after each plan completion*
 
@@ -111,6 +111,10 @@ Recent decisions affecting current work:
 - [05-03]: Program.withReactSynchronous + React는 --noReflection 아래서 안전 (Open Q #3 해소) — [<ReactComponent>] 어트리뷰트 없음이 핵심
 - [05-03]: deploy-app.yml은 examples/ch13-build/ (NOT .github/workflows/) — 저장소 당 Pages 배포 하나 제한; 교육용 복사 코드로 제공 (Open Q #4 해소)
 - [05-03]: Vite base: "/Fable-Tutorial/" — GitHub Pages 프로젝트 서브경로 에셋 경로 설정; ANCHOR: pages-base로 {{#include}} 가능
+- [05-01]: Async.AwaitPromise는 Fable 5.3.0 전체 Elmish/Feliz 스택에서 F# 타입으로 정의되지 않음 — Fable.Core 5.0.0 DLL/어떤 패키지에도 없음; ch06(4개 소스파일)에서는 작동하나 ch11+(49개 소스파일)에서 타입체커 오류 발생; 대안: `Cmd.OfPromise.either`(Fable.Elmish 5.0.2 내장) + `Promise.bind`로 JS.Promise<string> 반환
+- [05-01]: Cmd.OfPromise.either 패턴: `fetchTodo: string -> JS.Promise<string>` = `fetch url [] |> Promise.bind (fun r -> r.text())`; update에서 `Cmd.OfPromise.either fetchTodo url FetchSucceeded (fun ex -> FetchFailed ex.Message)`
+- [05-01]: Thoth.Json 10.5.1 + Fable.Fetch 2.7.0 버전 충돌 없음 확인 — Thoth.Fetch 없이 사용; Fable.Promise 3.2.0 추가 (Promise.bind 사용; RequireQualifiedAccess이므로 open Promise 사용 불가)
+- [05-01]: jsonplaceholder CORS 확인: Access-Control-Allow-Origin: * 반환 → plain fetch url [] 사용; RequestProperties.Mode RequestMode.Cors는 strict-CORS API 브라우저 런타임 대응책
 
 ### Research Flags (Phase planning 시 참고)
 
@@ -129,6 +133,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-06-22T08:48:53Z
-Stopped at: Completed 05-03-PLAN.md — Ch.13 빌드 최적화와 배포: --noReflection exit 0 (Open Q #3/#4 해소); Vite base; deploy-app.yml 교육 예제; Korean chapter; mdbook build exit 0
+Last session: 2026-06-22T09:01:21Z
+Stopped at: Completed 05-01-PLAN.md — Ch.11 JSON과 HTTP: Thoth.Json 10.5.1 수동 디코더 + Fable.Fetch 2.7.0; Async.AwaitPromise 비가용 → Cmd.OfPromise.either로 전환; npm run build exit 0; 6개 {{#include}} 앵커; mdbook build exit 0
 Resume file: None
