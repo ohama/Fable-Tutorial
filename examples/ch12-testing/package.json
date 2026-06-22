@@ -1,0 +1,14 @@
+{
+  "name": "ch12-testing",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "pretest": "dotnet fable Tests.fsproj -o dist",
+    "test": "npx mocha dist/*.fs.js --timeout 10000",
+    "build": "dotnet fable Tests.fsproj -o dist"
+  },
+  "devDependencies": {
+    "mocha": "9.2.0"
+  }
+}
