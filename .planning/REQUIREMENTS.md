@@ -29,9 +29,9 @@
 
 ### Elmish & UI (UI축, Ch.8-10)
 
-- [ ] **UI-01**: 독자가 Elmish MVU(Model-Update-View, Cmd)로 상태를 관리하는 앱을 만들 수 있다
-- [ ] **UI-02**: 독자가 Feliz로 React 컴포넌트를 작성할 수 있다
-- [ ] **UI-03**: 독자가 Feliz.Router로 SPA 라우팅을 구현할 수 있다
+- [x] **UI-01**: 독자가 Elmish MVU(Model-Update-View, Cmd)로 상태를 관리하는 앱을 만들 수 있다
+- [x] **UI-02**: 독자가 Feliz로 React 컴포넌트를 작성할 수 있다
+- [x] **UI-03**: 독자가 Feliz.Router로 SPA 라우팅을 구현할 수 있다
 
 ### Ecosystem & Real-World (실전축, Ch.11-13)
 
@@ -85,9 +85,9 @@
 | INTR-02 | Phase 3 | Complete |
 | INTR-03 | Phase 3 | Complete |
 | INTR-04 | Phase 3 | Complete |
-| UI-01 | Phase 4 | Pending |
-| UI-02 | Phase 4 | Pending |
-| UI-03 | Phase 4 | Pending |
+| UI-01 | Phase 4 | Complete |
+| UI-02 | Phase 4 | Complete |
+| UI-03 | Phase 4 | Complete |
 | REAL-01 | Phase 5 | Pending |
 | REAL-02 | Phase 5 | Pending |
 | REAL-03 | Phase 5 | Pending |
