@@ -22,14 +22,14 @@
 | 5 | 고급 Interop | erased union(U2..U9) 함정, StringEnum, Erase | ✅ |
 | 6 | POJO 패턴 + 비동기 | `[<JS.Pojo>]`·createObj·jsOptions, Promise ↔ Async | ✅ |
 | 7 | npm 라이브러리 바인딩 | canvas-confetti 바인딩, Glutinum/ts2fable | ✅ |
-| 8 | Elmish 아키텍처 | MVU, Program.mkProgram, Cmd.OfAsync | 🚧 |
-| 9 | Feliz 컴포넌트 | Html DSL, `[<ReactComponent>]`, React.useElmish | 🚧 |
-| 10 | SPA 라우팅 | Feliz.Router 다중 페이지 라우팅 | 🚧 |
-| 11 | JSON + HTTP | Thoth.Json, Fable.Fetch | ⏳ |
-| 12 | 테스트 | Fable.Mocha | ⏳ |
-| 13 | 빌드 최적화 + 배포 | 프로덕션 빌드, GitHub Pages | ⏳ |
+| 8 | Elmish 아키텍처 | MVU, Program.mkProgram, Cmd.OfAsync | ✅ |
+| 9 | Feliz 컴포넌트 | Html DSL, `[<ReactComponent>]`, React.useElmish | ✅ |
+| 10 | SPA 라우팅 | hash 라우팅 (URL→뷰 전환, 404) | ✅ |
+| 11 | JSON + HTTP | Thoth.Json 수동 디코더, Fable.Fetch | ✅ |
+| 12 | 테스트 | Fable.Mocha, 순수 update 함수 | ✅ |
+| 13 | 빌드 최적화 + 배포 | `--noReflection`, Vite base, GitHub Pages | ✅ |
 
-✅ 작성 완료 · 🚧 작성 중 · ⏳ 예정
+13개 챕터 모두 작성 완료 — 각 챕터는 실제로 빌드·실행되는 예제를 포함합니다.
 
 ## 사전 준비물
 
