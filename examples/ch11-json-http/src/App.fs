@@ -38,13 +38,11 @@ let todoDecoder : Decoder<Todo> =
 // ANCHOR_END: decoder
 
 // ANCHOR: fetch
-// HTTP 요청을 F# Async로: fetch는 JS Promise를 반환 → Async.AwaitPromise로 변환.
-let fetchTodo (url: string) : Async<string> =
-    async {
-        let! response = fetch url [] |> Async.AwaitPromise
-        let! text = response.text() |> Async.AwaitPromise
-        return text
-    }
+// HTTP 요청 함수: Fable.Fetch의 fetch는 JS Promise<Response>를 반환.
+// response.text()로 응답 본문 문자열을 추출한다.
+let fetchTodo (url: string) : Fable.Core.JS.Promise<string> =
+    fetch url []
+    |> Promise.bind (fun response -> response.text())
 // ANCHOR_END: fetch
 
 // ANCHOR: update
@@ -54,7 +52,7 @@ let update (msg: Msg) (model: Model) : Model * Cmd<Msg> =
     match msg with
     | FetchStarted ->
         Loading,
-        Cmd.OfAsync.either
+        Cmd.OfPromise.either
             fetchTodo
             url
             FetchSucceeded
