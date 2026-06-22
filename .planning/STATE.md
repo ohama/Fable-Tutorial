@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-06-19)
 
 **Core value:** F#을 아는 개발자가 이 튜토리얼만 따라가면 Fable로 실제 동작하는 웹 앱을 만들 수 있다.
-**Current focus:** Phase 4 — Elmish and UI Axis
+**Current focus:** Phase 5 — Ecosystem and Real-World Axis
 
 ## Current Position
 
-Phase: 4 of 5 (Elmish and UI Axis)
-Plan: 3 of 3 in current phase
-Status: Phase complete
-Last activity: 2026-06-19 — Completed 04-03-PLAN.md (Ch.10 SPA 라우팅: Feliz.Router 4.0.0 Feliz 3.3.3 비호환 확인 (Open Q #1 해소); 수동 hashchange 구독 폴백 적용; Program.withSubscription + IDisposable cleanup; 4개 {{#include}} 앵커; mdbook build exit 0)
+Phase: 5 of 5 (Ecosystem and Real-World Axis)
+Plan: 3 of 3 in current phase (05-03 complete)
+Status: In progress (05-01 Ch.11, 05-02 Ch.12 parallel plans may be pending)
+Last activity: 2026-06-22 — Completed 05-03-PLAN.md (Ch.13 빌드 최적화와 배포: --noReflection exit 0 확인; Vite base GitHub Pages 설정; deploy-app.yml 교육 예제; 한국어 챕터; mdbook build exit 0)
 
-Progress: [█████████████░] 65% (13/20 total plans)
+Progress: [██████████████░] 70% (14/20 total plans)
 
 ## Performance Metrics
 
@@ -31,10 +31,11 @@ Progress: [█████████████░] 65% (13/20 total plans)
 | Phase 2 | 3/3 | ~11m 10s | ~3m 43s |
 | Phase 3 | 4/4 | ~27m | ~6.8m |
 | Phase 4 | 3/3 | ~10m 33s | ~3m 31s |
+| Phase 5 | 1/3 (05-03) | ~4m 41s | — |
 
 **Recent Trend:**
-- Last 5 plans: 03-02 (~10m), 03-04 (~6m), 04-01 (~3m 27s), 04-02 (~3m), 04-03 (~4m 6s)
-- Trend: consistent, Phase 4 complete
+- Last 5 plans: 03-04 (~6m), 04-01 (~3m 27s), 04-02 (~3m), 04-03 (~4m 6s), 05-03 (~4m 41s)
+- Trend: consistent, ~4m per plan
 
 *Updated after each plan completion*
 
@@ -106,6 +107,10 @@ Recent decisions affecting current work:
 - [04-03]: 수동 hashchange 구독: Program.withSubscription + window.addEventListener("hashchange") + IDisposable.Dispose → removeEventListener (Pitfall 9 준수)
 - [04-03]: parseHash() = window.location.hash에서 #/접두사 제거 후 /로 분할 → string list; formatHash() = segments → "#/seg1/seg2" href 문자열
 - [04-03]: Feliz.Router 사용하려면 Feliz 4.x로 업그레이드 필요 — Phase 5 계획 시 참고
+- [05-03]: --noReflection 플래그 형태 확인: `dotnet fable --noReflection --run npx vite build` — Fable 5.3.0에서 정상 동작; 플래그는 --run 앞에 위치
+- [05-03]: Program.withReactSynchronous + React는 --noReflection 아래서 안전 (Open Q #3 해소) — [<ReactComponent>] 어트리뷰트 없음이 핵심
+- [05-03]: deploy-app.yml은 examples/ch13-build/ (NOT .github/workflows/) — 저장소 당 Pages 배포 하나 제한; 교육용 복사 코드로 제공 (Open Q #4 해소)
+- [05-03]: Vite base: "/Fable-Tutorial/" — GitHub Pages 프로젝트 서브경로 에셋 경로 설정; ANCHOR: pages-base로 {{#include}} 가능
 
 ### Research Flags (Phase planning 시 참고)
 
@@ -124,6 +129,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-06-19T09:05:32Z
-Stopped at: Completed 04-03-PLAN.md — Ch.10 SPA 라우팅: Feliz.Router 4.0.0 Feliz 3.3.3 비호환 확인 (Open Q #1 해소, FALLBACK 적용); Program.withSubscription hashchange 리스너 + IDisposable cleanup; 3-page SPA build exit 0; 4 {{#include}} 앵커; mdbook build exit 0; Phase 4 전체 완료
+Last session: 2026-06-22T08:48:53Z
+Stopped at: Completed 05-03-PLAN.md — Ch.13 빌드 최적화와 배포: --noReflection exit 0 (Open Q #3/#4 해소); Vite base; deploy-app.yml 교육 예제; Korean chapter; mdbook build exit 0
 Resume file: None
