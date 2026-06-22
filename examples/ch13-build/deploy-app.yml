@@ -1,0 +1,64 @@
+# ANCHOR: workflow
+# 이 파일은 교육용 워크플로 예제입니다.
+# 실제 배포 시에는 자신의 앱 저장소의 .github/workflows/deploy-app.yml에 복사하세요.
+name: Deploy Fable SPA to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-app
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: npm
+          cache-dependency-path: examples/ch13-build/package-lock.json
+
+      - name: Restore dotnet tools
+        run: dotnet tool restore
+
+      - name: Install npm dependencies
+        working-directory: examples/ch13-build
+        run: npm ci
+
+      - name: Build (production, reflection-free)
+        working-directory: examples/ch13-build
+        run: dotnet fable --noReflection --run npx vite build
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: examples/ch13-build/dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+# ANCHOR_END: workflow
