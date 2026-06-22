@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "pretest": "dotnet fable Tests.fsproj -o dist",
-    "test": "npx mocha dist/*.fs.js --timeout 10000",
+    "test": "npx mocha dist/src/*.js --timeout 10000",
     "build": "dotnet fable Tests.fsproj -o dist"
   },
   "devDependencies": {
