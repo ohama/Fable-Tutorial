@@ -35,9 +35,9 @@
 
 ### Ecosystem & Real-World (실전축, Ch.11-13)
 
-- [ ] **REAL-01**: 독자가 Thoth.Json으로 직렬화하고 fetch로 HTTP 통신하는 앱을 만들 수 있다
-- [ ] **REAL-02**: 독자가 Fable.Mocha로 테스트를 작성하고 실행할 수 있다
-- [ ] **REAL-03**: 독자가 프로덕션 빌드를 최적화하고 배포할 수 있다
+- [x] **REAL-01**: 독자가 Thoth.Json으로 직렬화하고 fetch로 HTTP 통신하는 앱을 만들 수 있다
+- [x] **REAL-02**: 독자가 Fable.Mocha로 테스트를 작성하고 실행할 수 있다
+- [x] **REAL-03**: 독자가 프로덕션 빌드를 최적화하고 배포할 수 있다
 
 ### Content & Format (전 챕터 공통)
 
@@ -88,9 +88,9 @@
 | UI-01 | Phase 4 | Complete |
 | UI-02 | Phase 4 | Complete |
 | UI-03 | Phase 4 | Complete |
-| REAL-01 | Phase 5 | Pending |
-| REAL-02 | Phase 5 | Pending |
-| REAL-03 | Phase 5 | Pending |
+| REAL-01 | Phase 5 | Complete |
+| REAL-02 | Phase 5 | Complete |
+| REAL-03 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 20 total

@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Core Toolchain Chapters (Ch.1-3)** - 프로젝트 셋업·컴파일 모델·Fable.Core 기초 챕터 작성 ✓
 - [x] **Phase 3: JS Interop Axis (Ch.4-7)** - Emit/Import/Global·erased union·POJO·라이브러리 바인딩 챕터 작성 ✓
 - [x] **Phase 4: Elmish and UI Axis (Ch.8-10)** - Elmish MVU·Feliz 컴포넌트·SPA 라우팅 챕터 작성 ✓
-- [ ] **Phase 5: Ecosystem and Real-World Axis (Ch.11-13)** - Thoth.Json+HTTP·테스트·빌드 최적화 챕터 작성
+- [x] **Phase 5: Ecosystem and Real-World Axis (Ch.11-13)** - Thoth.Json+HTTP·테스트·빌드 최적화 챕터 작성 ✓
 
 ## Phase Details
 
@@ -109,9 +109,9 @@ Plans:
 **Plans**: 3 plans (2 waves: 05-01 + 05-03 in parallel wave 1, then 05-02 wave 2 to isolate Fable.Mocha risk)
 
 Plans:
-- [ ] 05-01-PLAN.md — Ch.11 JSON과 HTTP: Thoth.Json 수동 디코더 + Fable.Fetch + Elmish Cmd.OfAsync.either fetch+decode (wave 1)
-- [ ] 05-02-PLAN.md — Ch.12 테스팅: Fable.Mocha 순수 update 함수 테스트, npm test 통과 (build-first + ranked fallback) (wave 2)
-- [ ] 05-03-PLAN.md — Ch.13 빌드 최적화와 배포: --noReflection 프로덕션 빌드 + Vite base + GitHub Pages 워크플로(코드로 교육) (wave 1)
+- [x] 05-01-PLAN.md — Ch.11 JSON과 HTTP: Thoth.Json 수동 디코더 + Fable.Fetch + Elmish Cmd.OfPromise.either fetch+decode (wave 1)
+- [x] 05-02-PLAN.md — Ch.12 테스팅: Fable.Mocha 순수 update 함수 테스트, npm test 통과 (Fable.Mocha 2.17.0 × Fable 5.3.0 호환 확인) (wave 2)
+- [x] 05-03-PLAN.md — Ch.13 빌드 최적화와 배포: --noReflection 프로덕션 빌드 + Vite base + GitHub Pages 워크플로(코드로 교육) (wave 1)
 
 ---
 
@@ -126,7 +126,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Core Toolchain Chapters (Ch.1-3) | 3/3 | ✓ Complete | 2026-06-19 |
 | 3. JS Interop Axis (Ch.4-7) | 4/4 | ✓ Complete | 2026-06-19 |
 | 4. Elmish and UI Axis (Ch.8-10) | 3/3 | ✓ Complete | 2026-06-22 |
-| 5. Ecosystem and Real-World Axis (Ch.11-13) | 0/3 | Planned | - |
+| 5. Ecosystem and Real-World Axis (Ch.11-13) | 3/3 | ✓ Complete | 2026-06-23 |
 
 ---
 *Roadmap created: 2026-06-19*
