@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-06-19)
 ## Current Position
 
 Phase: 5 of 5 (Ecosystem and Real-World Axis)
-Plan: 3 of 3 in current phase (05-01, 05-03 complete; 05-02 Ch.12 may be pending)
-Status: In progress
-Last activity: 2026-06-22 — Completed 05-01-PLAN.md (Ch.11 JSON과 HTTP: Thoth.Json 10.5.1 수동 디코더 + Fable.Fetch 2.7.0 + Cmd.OfPromise.either; Async.AwaitPromise 비가용 해소; npm run build exit 0; mdbook build exit 0)
+Plan: 3 of 3 in current phase (05-01, 05-02, 05-03 all complete)
+Status: COMPLETE — v1.0 milestone achieved (all 13 chapters written)
+Last activity: 2026-06-22 — Completed 05-02-PLAN.md (Ch.12 테스팅: Fable.Mocha 2.17.0 verified under Fable 5.3.0; npm test exit 0, 5 passing; Korean chapter complete; Research Flag CLOSED)
 
-Progress: [███████████████░] 75% (15/20 total plans)
+Progress: [████████████████] 100% (16/16 completed plans — v1.0 all 13 chapters done)
 
 ## Performance Metrics
 
@@ -31,11 +31,11 @@ Progress: [███████████████░] 75% (15/20 total pl
 | Phase 2 | 3/3 | ~11m 10s | ~3m 43s |
 | Phase 3 | 4/4 | ~27m | ~6.8m |
 | Phase 4 | 3/3 | ~10m 33s | ~3m 31s |
-| Phase 5 | 2/3 (05-01, 05-03) | ~22m 11s | ~11m 5s |
+| Phase 5 | 3/3 (05-01, 05-02, 05-03) | ~25m 17s | ~8m 26s |
 
 **Recent Trend:**
-- Last 5 plans: 04-01 (~3m 27s), 04-02 (~3m), 04-03 (~4m 6s), 05-03 (~4m 41s), 05-01 (~17m 30s)
-- Trend: 05-01 longer due to Async.AwaitPromise investigation (blocking issue → root cause analysis → Cmd.OfPromise.either workaround)
+- Last 5 plans: 04-03 (~4m 6s), 05-03 (~4m 41s), 05-01 (~17m 30s), 05-02 (~3m 6s)
+- Trend: 05-02 fast due to Fable.Mocha working on first attempt (only path fix needed); 05-01 longer due to Async.AwaitPromise investigation
 
 *Updated after each plan completion*
 
@@ -112,6 +112,8 @@ Recent decisions affecting current work:
 - [05-03]: deploy-app.yml은 examples/ch13-build/ (NOT .github/workflows/) — 저장소 당 Pages 배포 하나 제한; 교육용 복사 코드로 제공 (Open Q #4 해소)
 - [05-03]: Vite base: "/Fable-Tutorial/" — GitHub Pages 프로젝트 서브경로 에셋 경로 설정; ANCHOR: pages-base로 {{#include}} 가능
 - [05-01]: Async.AwaitPromise는 Fable 5.3.0 전체 Elmish/Feliz 스택에서 F# 타입으로 정의되지 않음 — Fable.Core 5.0.0 DLL/어떤 패키지에도 없음; ch06(4개 소스파일)에서는 작동하나 ch11+(49개 소스파일)에서 타입체커 오류 발생; 대안: `Cmd.OfPromise.either`(Fable.Elmish 5.0.2 내장) + `Promise.bind`로 JS.Promise<string> 반환
+- [05-02]: Fable.Mocha 2.17.0은 Fable 5.3.0에서 컴파일 및 실행 모두 정상 작동 확인 (Research Open Q #1 해소) — Fable.Core.Testing.Assert 존재 확인; mocha 9.2.0 정확히 핀
+- [05-02]: Fable 5.3.0은 소스 디렉토리 구조를 출력에 그대로 반영 — src/Tests.fs → dist/src/Tests.js (평탄 dist/Tests.fs.js 아님); mocha 경로는 dist/src/*.js로 지정해야 함 (Fallback B 적용)
 - [05-01]: Cmd.OfPromise.either 패턴: `fetchTodo: string -> JS.Promise<string>` = `fetch url [] |> Promise.bind (fun r -> r.text())`; update에서 `Cmd.OfPromise.either fetchTodo url FetchSucceeded (fun ex -> FetchFailed ex.Message)`
 - [05-01]: Thoth.Json 10.5.1 + Fable.Fetch 2.7.0 버전 충돌 없음 확인 — Thoth.Fetch 없이 사용; Fable.Promise 3.2.0 추가 (Promise.bind 사용; RequireQualifiedAccess이므로 open Promise 사용 불가)
 - [05-01]: jsonplaceholder CORS 확인: Access-Control-Allow-Origin: * 반환 → plain fetch url [] 사용; RequestProperties.Mode RequestMode.Cors는 strict-CORS API 브라우저 런타임 대응책
@@ -119,7 +121,7 @@ Recent decisions affecting current work:
 ### Research Flags (Phase planning 시 참고)
 
 - Phase 3 Ch.7 (라이브러리 바인딩): canvas-confetti로 결정 및 완료 — RESOLVED in 03-04
-- Phase 5 Ch.12 (테스트): Fable.Mocha + Fable 5 호환성 미확인 — Phase 2 또는 3 중 POC 빌드 검증 필요
+- Phase 5 Ch.12 (테스트): Fable.Mocha + Fable 5 호환성 미확인 — RESOLVED in 05-02: Fable.Mocha 2.17.0 compiles and runs under Fable 5.3.0; Fallback B (path fix: dist/src/*.js not dist/*.fs.js)
 - [01-01]: mdbook-admonish와 mdbook-mermaid가 mdbook 0.5.x를 지원하는 버전을 출시하는지 모니터링 필요
 - [04-03]: Feliz.Router 4.0.0 Feliz 3.3.3 비호환 확인 — Phase 5에서 Feliz.Router 재시도 시 Feliz 4.x 업그레이드 필요 (트레이드오프: 전체 Feliz API 변경 수반)
 
@@ -133,6 +135,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-06-22T09:01:21Z
-Stopped at: Completed 05-01-PLAN.md — Ch.11 JSON과 HTTP: Thoth.Json 10.5.1 수동 디코더 + Fable.Fetch 2.7.0; Async.AwaitPromise 비가용 → Cmd.OfPromise.either로 전환; npm run build exit 0; 6개 {{#include}} 앵커; mdbook build exit 0
+Last session: 2026-06-22T09:08:25Z
+Stopped at: Completed 05-02-PLAN.md — Ch.12 테스팅: Fable.Mocha 2.17.0 verified under Fable 5.3.0 (BUILD-FIRST); npm test exit 0 (5 passing); Korean chapter complete; v1.0 milestone COMPLETE (all 13 chapters)
 Resume file: None
