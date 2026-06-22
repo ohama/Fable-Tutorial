@@ -106,12 +106,12 @@ Plans:
   2. 독자가 Ch.12 예제에서 `Fable.Mocha`로 순수 Elmish update 함수에 대한 테스트를 작성하고 `npm test`로 통과시킨다.
   3. 독자가 Ch.13 지시를 따라 `--noReflection` 옵션을 포함한 프로덕션 빌드를 수행하고 GitHub Pages에 배포하여 라이브 URL에서 앱이 동작하는 것을 확인한다.
   4. Ch.11-13 각각의 독립 예제 프로젝트가 `npm run build`로 에러 없이 빌드된다.
-**Plans**: TBD
+**Plans**: 3 plans (2 waves: 05-01 + 05-03 in parallel wave 1, then 05-02 wave 2 to isolate Fable.Mocha risk)
 
 Plans:
-- [ ] 05-01: Ch.11 — Thoth.Json + HTTP 챕터 작성 (Thoth 디코더, Fable.Fetch, async-to-Cmd 브릿지)
-- [ ] 05-02: Ch.12 — 테스트 챕터 작성 (Fable.Mocha, 순수 update 함수 테스트)
-- [ ] 05-03: Ch.13 — 빌드 최적화 및 배포 챕터 작성 (tree shaking, --noReflection, GitHub Pages)
+- [ ] 05-01-PLAN.md — Ch.11 JSON과 HTTP: Thoth.Json 수동 디코더 + Fable.Fetch + Elmish Cmd.OfAsync.either fetch+decode (wave 1)
+- [ ] 05-02-PLAN.md — Ch.12 테스팅: Fable.Mocha 순수 update 함수 테스트, npm test 통과 (build-first + ranked fallback) (wave 2)
+- [ ] 05-03-PLAN.md — Ch.13 빌드 최적화와 배포: --noReflection 프로덕션 빌드 + Vite base + GitHub Pages 워크플로(코드로 교육) (wave 1)
 
 ---
 
@@ -126,7 +126,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Core Toolchain Chapters (Ch.1-3) | 3/3 | ✓ Complete | 2026-06-19 |
 | 3. JS Interop Axis (Ch.4-7) | 4/4 | ✓ Complete | 2026-06-19 |
 | 4. Elmish and UI Axis (Ch.8-10) | 3/3 | ✓ Complete | 2026-06-22 |
-| 5. Ecosystem and Real-World Axis (Ch.11-13) | 0/3 | Not started | - |
+| 5. Ecosystem and Real-World Axis (Ch.11-13) | 0/3 | Planned | - |
 
 ---
 *Roadmap created: 2026-06-19*
